@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BusinessIQ — Navigate Your Franchise Business</title>
+  <meta name="description" content="BusinessIQ is an Authorized IFC of Franchise India Consultants Pvt. Ltd. Explore 50+ international franchise opportunities across India." />
+  <link rel="canonical" href="https://www.businessiq.co.in/" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+  <style>
+    /* ==========================================
+       RESET
+    ========================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    /* ==========================================
+       DESIGN TOKENS
+    ========================================== */
+    :root {
+      --bg:           #F8FAFC;
+      --bg-alt:       #EEF2F8;
+      --surface:      #FFFFFF;
+      --surface-2:    #F1F5FB;
+      --glass:        rgba(255,255,255,0.72);
+      --border:       rgba(15,23,42,0.08);
+      --border-dark:  rgba(15,23,42,0.15);
+      --text:         #0F172A;
+      --text-2:       #475569;
+      --text-3:       #94A3B8;
+
+      --primary:      #1a3c6e;
+      --primary-dk:   #0F2447;
+      --primary-lt:   #2B5DA0;
+      --accent:       #E8A020;
+      --accent-lt:    #F4C84A;
+
+      --g-primary:    linear-gradient(135deg, #1a3c6e 0%, #2563EB 100%);
+      --g-accent:     linear-gradient(135deg, #E8A020 0%, #F59E0B 100%);
+      --g-hero:       linear-gradient(135deg, #060D1F 0%, #0F2447 35%, #1a3c6e 65%, #0D1E3C 100%);
+      --g-shine:      linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+
+      --sh-xs:  0 1px 3px rgba(15,23,42,0.05);
+      --sh-sm:  0 2px 8px rgba(15,23,42,0.07), 0 1px 3px rgba(15,23,42,0.04);
+      --sh-md:  0 8px 24px rgba(15,23,42,0.09), 0 2px 8px rgba(15,23,42,0.05);
+      --sh-lg:  0 20px 48px rgba(15,23,42,0.11), 0 8px 24px rgba(15,23,42,0.06);
+      --sh-xl:  0 40px 80px rgba(15,23,42,0.14), 0 16px 40px rgba(15,23,42,0.08);
+      --sh-acc: 0 8px 32px rgba(232,160,32,0.32);
+      --sh-pri: 0 8px 32px rgba(26,60,110,0.32);
+
+      --r-sm:   12px;
+      --r-md:   16px;
+      --r-lg:   24px;
+      --r-xl:   32px;
+      --r-full: 9999px;
+
+      --ease:        cubic-bezier(0.4,0,0.2,1);
+      --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+      --ease-out:    cubic-bezier(0,0,0.2,1);
+
+      --ifc-h:  36px;
+      --nav-h:  72px;
+      --max-w:  1440px;
+    }
+
+    [data-theme="dark"] {
+      --bg:        #060B16;
+      --bg-alt:    #0D1526;
+      --surface:   #111827;
+      --surface-2: #1E293B;
+      --glass:     rgba(17,24,39,0.82);
+      --border:    rgba(255,255,255,0.07);
+      --border-dark: rgba(255,255,255,0.14);
+      --text:      #F8FAFC;
+      --text-2:    #94A3B8;
+      --text-3:    #475569;
+      --sh-md:  0 8px 24px rgba(0,0,0,0.4);
+      --sh-lg:  0 20px 48px rgba(0,0,0,0.5);
+      --sh-xl:  0 40px 80px rgba(0,0,0,0.65);
+    }
+
+    /* ==========================================
+       BASE
+    ========================================== */
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: clamp(1rem, 0.95vw + 0.7rem, 1.125rem);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background 0.3s var(--ease), color 0.3s var(--ease);
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      font-family: 'Bricolage Grotesque','Inter',sans-serif;
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+    h1 { font-size: clamp(2.4rem, 4.5vw + 1rem, 5rem); font-weight: 800; }
+    h2 { font-size: clamp(1.9rem, 2.8vw + 0.8rem, 3.5rem); }
+    h3 { font-size: clamp(1.2rem, 1.6vw + 0.5rem, 1.65rem); }
+    h4 { font-size: clamp(1.05rem, 1.2vw + 0.4rem, 1.3rem); }
+    p  { color: var(--text-2); line-height: 1.75; }
+    a  { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { font-family: 'Inter', sans-serif; }
+
+    /* ==========================================
+       LAYOUT
+    ========================================== */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 80px);
+    }
+    .section     { padding: clamp(72px, 9vw, 136px) 0; }
+    .section-sm  { padding: clamp(48px, 6vw, 96px) 0; }
+
+    /* ==========================================
+       IFC DISCLOSURE BAR
+    ========================================== */
+    .ifc-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1002;
+      height: var(--ifc-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--g-primary);
+      color: rgba(255,255,255,0.82);
+      font-size: clamp(0.68rem, 0.9vw + 0.3rem, 0.78rem);
+      font-weight: 500;
+      padding: 0 clamp(12px, 3vw, 32px);
+      letter-spacing: 0.025em;
+      text-align: center;
+    }
+    .ifc-bar strong { color: var(--accent-lt); }
+    .ifc-bar b { color: #fff; }
+
+    /* ==========================================
+       NAVIGATION
+    ========================================== */
+    .nav {
+      position: sticky;
+      top: var(--ifc-h);
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      background: var(--glass);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+    }
+    .nav.scrolled { box-shadow: var(--sh-md); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(12px,3vw,40px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Bricolage Grotesque',sans-serif;
+      font-size: clamp(1.2rem,1.5vw+0.6rem,1.5rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .logo img { width: 36px; height: 36px; }
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px,2.2vw,36px);
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-2);
+      transition: color 0.2s var(--ease);
+      position: relative;
+      white-space: nowrap;
+    }
+    .nav-links a::after {
+      content:'';
+      position:absolute;
+      bottom:-4px; left:0;
+      width:0; height:2px;
+      background: var(--accent);
+      border-radius:2px;
+      transition: width 0.25s var(--ease);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width:100%; }
+
+    .nav-actions { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+
+    .theme-btn {
+      width:42px; height:42px;
+      border-radius: var(--r-sm);
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      display: flex; align-items:center; justify-content:center;
+      font-size: 1.05rem;
+      color: var(--text);
+      transition: all 0.2s var(--ease);
+    }
+    .theme-btn:hover { background: var(--bg-alt); transform: scale(1.06); }
+
+    .hamburger {
+      display:none;
+      flex-direction:column; gap:5px;
+      background:none; border:none;
+      cursor:pointer; padding:8px;
+      border-radius: var(--r-sm);
+    }
+    .hamburger span {
+      display:block; width:24px; height:2px;
+      background: var(--text); border-radius:2px;
+      transition: all 0.3s var(--ease);
+    }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 990;
+      background: var(--surface);
+      padding: calc(var(--ifc-h) + var(--nav-h) + 24px) clamp(24px,6vw,48px) 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transform: translateX(100%);
+      transition: transform 0.45s var(--ease);
+      overflow-y: auto;
+    }
+    .mobile-drawer.open { transform: translateX(0); }
+    .mobile-drawer a {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s var(--ease);
+    }
+    .mobile-drawer a:hover { color: var(--primary); }
+
+    /* ==========================================
+       BUTTONS
+    ========================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 56px;
+      padding: 0 clamp(22px,3vw,36px);
+      border-radius: var(--r-md);
+      font-size: clamp(0.875rem,0.9vw+0.4rem,1rem);
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-spring);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .btn::after {
+      content:'';
+      position:absolute; inset:0;
+      background: var(--g-shine);
+      opacity:0;
+      transition: opacity 0.3s var(--ease);
+    }
+    .btn:hover::after { opacity:1; }
+
+    .btn-primary {
+      background: var(--g-primary);
+      color: #fff;
+      box-shadow: var(--sh-pri);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 40px rgba(26,60,110,0.42); }
+    .btn-primary:active { transform: translateY(0) scale(0.98); }
+
+    .btn-accent {
+      background: var(--g-accent);
+      color: #0F172A;
+      font-weight: 700;
+      box-shadow: var(--sh-acc);
+    }
+    .btn-accent:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 40px rgba(232,160,32,0.45); }
+    .btn-accent:active { transform: translateY(0) scale(0.98); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border-dark);
+    }
+    .btn-outline:hover {
+      background: var(--surface);
+      border-color: var(--primary-lt);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--sh-md);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+
+    .btn-nav {
+      height: 40px;
+      padding: 0 18px;
+      border-radius: var(--r-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: var(--g-primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-nav:hover { transform: scale(1.04); box-shadow: var(--sh-pri); }
+
+    /* ==========================================
+       CHIPS / LABELS
+    ========================================== */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--r-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .chip-primary {
+      background: rgba(26,60,110,0.09);
+      color: var(--primary-lt);
+      border: 1px solid rgba(26,60,110,0.14);
+    }
+    [data-theme="dark"] .logo img {
+      filter: brightness(0) invert(1);
+    }
+    [data-theme="dark"] .chip-primary {
+      background: rgba(43,93,160,0.2);
+      color: #7EB3FF;
+      border-color: rgba(43,93,160,0.3);
+    }
+    .chip-accent {
+      background: rgba(232,160,32,0.12);
+      color: #9A6700;
+      border: 1px solid rgba(232,160,32,0.2);
+    }
+    [data-theme="dark"] .chip-accent {
+      color: var(--accent-lt);
+      background: rgba(232,160,32,0.15);
+    }
+
+    /* ==========================================
+       HERO
+    ========================================== */
+    .hero {
+      min-height: calc(100vh - var(--ifc-h) - var(--nav-h));
+      background: var(--g-hero);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(0px);
+    }
+    .orb-1 {
+      width: 55vw; height: 55vw;
+      top: -20%; right: -15%;
+      background: radial-gradient(circle, rgba(37,99,235,0.22) 0%, transparent 65%);
+      animation: orb1 9s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 38vw; height: 38vw;
+      bottom: -12%; left: 2%;
+      background: radial-gradient(circle, rgba(232,160,32,0.14) 0%, transparent 65%);
+      animation: orb2 11s ease-in-out infinite;
+    }
+    .orb-3 {
+      width: 28vw; height: 28vw;
+      top: 25%; left: 22%;
+      background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 65%);
+      animation: orb3 13s ease-in-out infinite;
+    }
+    @keyframes orb1 {
+      0%,100% { transform: translate(0,0) scale(1); }
+      40%      { transform: translate(-3%,5%) scale(1.06); }
+      70%      { transform: translate(2%,-3%) scale(0.96); }
+    }
+    @keyframes orb2 {
+      0%,100% { transform: translate(0,0) scale(1); }
+      45%     { transform: translate(5%,-6%) scale(1.08); }
+    }
+    @keyframes orb3 {
+      0%,100% { transform: translate(0,0); }
+      50%     { transform: translate(4%,4%); }
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px,6vw,96px);
+      align-items: center;
+      padding: clamp(56px,8vw,120px) 0;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: var(--r-full);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(8px);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .pulse-dot {
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.4; transform:scale(0.75); }
+    }
+
+    .hero-title {
+      color: #fff;
+      margin-bottom: clamp(16px,2vw,24px);
+      line-height: 1.06;
+    }
+    .grad-text {
+      background: var(--g-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.62);
+      font-size: clamp(1rem,1.1vw+0.5rem,1.2rem);
+      margin-bottom: clamp(32px,4vw,48px);
+      max-width: 520px;
+    }
+
+    .hero-cta { display:flex; gap:16px; flex-wrap:wrap; }
+
+    .hero-stats {
+      display: flex;
+      gap: clamp(24px,4vw,56px);
+      margin-top: clamp(40px,5vw,64px);
+      padding-top: clamp(32px,4vw,48px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+    .hstat-num {
+      font-family: 'Bricolage Grotesque',sans-serif;
+      font-size: clamp(1.6rem,2.8vw+0.5rem,2.6rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+    .hstat-num .acc { color: var(--accent); }
+    .hstat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.46);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 4px;
+    }
+
+    /* Hero Visual (right side) */
+    .hero-visual { display:flex; flex-direction:column; gap:14px; position:relative; }
+
+    .hv-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.11);
+      backdrop-filter: blur(14px);
+      border-radius: var(--r-lg);
+      padding: clamp(20px,2.5vw,32px);
+      transition: transform 0.35s var(--ease);
+    }
+    .hv-card:hover { transform: translateY(-5px); }
+
+    .hv-stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .hv-stat {
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--r-sm);
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .hv-stat .n {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:clamp(1.3rem,2vw,1.8rem);
+      font-weight:800; color:#fff; display:block;
+    }
+    .hv-stat .n .a { color: var(--accent); }
+    .hv-stat .l { font-size:0.7rem; color:rgba(255,255,255,0.46); text-transform:uppercase; letter-spacing:0.07em; }
+
+    .hv-mini { display:flex; align-items:center; gap:14px; }
+    .hv-icon {
+      width:44px; height:44px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; flex-shrink:0;
+    }
+    .hv-mini h5 { color:rgba(255,255,255,0.88); font-size:0.9rem; font-weight:600; }
+    .hv-mini p  { font-size:0.75rem; color:rgba(255,255,255,0.46); margin-top:2px; }
+
+    .hero-badge {
+      position:absolute; right:-20px; top:50%;
+      transform: translateY(-50%);
+      background: var(--g-accent);
+      border-radius: var(--r-lg);
+      padding: 18px 22px;
+      text-align:center;
+      box-shadow: var(--sh-acc);
+      animation: badge-float 6s ease-in-out infinite;
+    }
+    .hero-badge strong {
+      display:block; font-size:1.6rem; font-weight:800;
+      color:#0F172A; font-family:'Bricolage Grotesque',sans-serif;
+    }
+    .hero-badge span { font-size:0.68rem; color:rgba(15,23,42,0.65); text-transform:uppercase; letter-spacing:0.08em; }
+    @keyframes badge-float {
+      0%,100% { transform:translateY(-50%); }
+      50%      { transform:translateY(calc(-50% - 14px)); }
+    }
+
+    /* ==========================================
+       TRUST BAR
+    ========================================== */
+    .trust-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: clamp(18px,2.5vw,28px) 0;
+      overflow: hidden;
+    }
+    .trust-inner { display:flex; align-items:center; gap:clamp(20px,4vw,56px); flex-wrap:wrap; justify-content:center; }
+    .trust-item {
+      display:flex; align-items:center; gap:8px;
+      font-size:0.875rem; font-weight:500; color:var(--text-2);
+      white-space:nowrap;
+    }
+    .trust-item .tick { color:var(--accent); font-size:0.875rem; }
+
+    /* ==========================================
+       SECTION HEADERS
+    ========================================== */
+    .sec-head {
+      text-align:center;
+      max-width: 680px;
+      margin: 0 auto clamp(48px,6vw,80px);
+    }
+    .sec-head .chip { margin-bottom:18px; }
+    .sec-head h2 { margin-bottom:14px; }
+    .sec-head p { font-size: clamp(1rem,1vw+0.5rem,1.1rem); }
+
+    /* ==========================================
+       ABOUT
+    ========================================== */
+    .about-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:clamp(48px,7vw,104px);
+      align-items:center;
+    }
+
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: clamp(28px,3.5vw,48px);
+      box-shadow: var(--sh-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card::before {
+      content:'';
+      position:absolute; top:0; right:0;
+      width:200px; height:200px;
+      background: radial-gradient(circle at top right, rgba(26,60,110,0.06) 0%, transparent 65%);
+    }
+
+    .about-icon-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:12px;
+      margin-bottom:20px; position:relative;
+    }
+    .aic {
+      background: var(--bg-alt);
+      border-radius: var(--r-sm);
+      padding: 20px 16px;
+      text-align:center;
+      transition: transform 0.3s var(--ease);
+    }
+    .aic:hover { transform:scale(1.04); }
+    .aic .em { font-size:1.8rem; margin-bottom:8px; }
+    .aic h5 { font-size:0.82rem; color:var(--text); margin-bottom:2px; }
+    .aic p  { font-size:0.72rem; }
+
+    .about-note {
+      font-size:0.78rem; color:var(--text-3);
+      text-align:center; margin-top:4px;
+    }
+
+    .about-float {
+      position:absolute; bottom:-16px; right:-12px;
+      background: var(--g-accent);
+      border-radius: var(--r-md);
+      padding:16px 22px;
+      box-shadow: var(--sh-acc);
+      text-align:center;
+    }
+    .about-float strong {
+      display:block; font-size:1.9rem; font-weight:800;
+      color:#0F172A; font-family:'Bricolage Grotesque',sans-serif;
+    }
+    .about-float span { font-size:0.68rem; color:rgba(15,23,42,0.65); }
+
+    .about-text .chip { margin-bottom:18px; }
+    .about-text h2   { margin-bottom:14px; }
+    .about-text > p  { margin-bottom:28px; }
+
+    .feat-list { display:flex; flex-direction:column; gap:14px; margin-bottom:36px; }
+    .feat-item { display:flex; gap:12px; align-items:flex-start; }
+    .feat-check {
+      width:22px; height:22px; border-radius:50%;
+      background: var(--g-primary);
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; margin-top:3px;
+    }
+    .feat-check svg { width:10px; height:10px; color:#fff; }
+    .feat-item p { color:var(--text); font-size:0.9rem; line-height:1.55; margin:0; }
+
+    /* ==========================================
+       CATEGORIES
+    ========================================== */
+    .cat-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(270px,100%),1fr));
+      gap:clamp(14px,2vw,22px);
+    }
+
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: clamp(24px,3vw,40px);
+      cursor: pointer;
+      transition: all 0.35s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-card::before {
+      content:'';
+      position:absolute; inset:0;
+      background: var(--g-primary);
+      opacity:0;
+      transition: opacity 0.35s var(--ease);
+    }
+    .cat-card:hover { border-color:transparent; transform:translateY(-10px); box-shadow:var(--sh-xl); }
+    .cat-card:hover::before { opacity:1; }
+    .cat-card:hover .cat-ico  { background:rgba(255,255,255,0.14); }
+    .cat-card:hover h3, .cat-card:hover .cat-count { color:#fff; }
+    .cat-card:hover p { color:rgba(255,255,255,0.68); }
+    .cat-card:hover .cat-arr { color:#fff; transform:translate(4px,-4px); }
+    .cat-card:hover .cat-count { border-color:rgba(255,255,255,0.2); color:rgba(255,255,255,0.7); }
+
+    .cat-card > * { position:relative; z-index:1; }
+
+    .cat-ico {
+      width:60px; height:60px;
+      border-radius:var(--r-sm);
+      background:var(--bg-alt);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.6rem; margin-bottom:18px;
+      transition:background 0.35s var(--ease);
+    }
+    .cat-card h3   { margin-bottom:8px; transition:color 0.35s var(--ease); }
+    .cat-card p    { font-size:0.875rem; margin-bottom:20px; transition:color 0.35s var(--ease); }
+
+    .cat-foot { display:flex; align-items:center; justify-content:space-between; }
+    .cat-count {
+      font-size:0.78rem; font-weight:600; color:var(--text-3);
+      border:1px solid var(--border); border-radius:var(--r-full);
+      padding:4px 12px;
+      transition:all 0.35s var(--ease);
+    }
+    .cat-arr { color:var(--text-3); font-size:1.1rem; transition:all 0.35s var(--ease); }
+
+    /* ==========================================
+       PROCESS
+    ========================================== */
+    .steps {
+      display:grid;
+      grid-template-columns: repeat(6,1fr);
+      gap:clamp(10px,1.6vw,20px);
+      position:relative;
+    }
+    .steps::before {
+      content:'';
+      position:absolute;
+      top:27px; left:calc(8% + 28px); right:calc(8% + 28px);
+      height:2px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      z-index:0;
+    }
+    .step { text-align:center; position:relative; z-index:1; }
+    .step-n {
+      width:56px; height:56px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:1.05rem; font-weight:800;
+      margin:0 auto 18px;
+      transition:transform 0.3s var(--ease-spring);
+    }
+    .step:nth-child(1) .step-n { background:var(--g-primary); color:#fff; box-shadow:var(--sh-pri); }
+    .step:nth-child(2) .step-n { background:var(--g-accent); color:#0F172A; box-shadow:var(--sh-acc); }
+    .step:nth-child(3) .step-n,
+    .step:nth-child(4) .step-n,
+    .step:nth-child(5) .step-n { background:var(--surface); border:2px solid var(--border-dark); color:var(--text); }
+    .step:nth-child(6) .step-n { background:var(--g-primary); color:#fff; box-shadow:var(--sh-pri); }
+    .step:hover .step-n { transform:scale(1.18); }
+    .step h4 { margin-bottom:6px; font-size:clamp(0.85rem,0.9vw+0.3rem,1rem); }
+    .step p  { font-size:0.8rem; }
+
+    /* ==========================================
+       INVESTMENT TIERS
+    ========================================== */
+    .inv-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr));
+      gap:clamp(14px,2vw,22px);
+    }
+    .inv-card {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--r-lg);
+      padding:clamp(24px,3vw,40px);
+      transition:all 0.35s var(--ease);
+      position:relative;
+      overflow:hidden;
+    }
+    .inv-card::after {
+      content:'';
+      position:absolute; top:0; left:0; right:0;
+      height:3px;
+      background:var(--g-primary);
+      transform:scaleX(0);
+      transition:transform 0.35s var(--ease);
+      transform-origin:left;
+    }
+    .inv-card:hover { transform:translateY(-8px); box-shadow:var(--sh-xl); border-color:transparent; }
+    .inv-card:hover::after { transform:scaleX(1); }
+
+    .inv-card.feat {
+      background:var(--g-primary);
+      border-color:transparent;
+      box-shadow:var(--sh-xl);
+    }
+    .inv-card.feat::after { transform:scaleX(1); background:var(--g-accent); }
+    .inv-card.feat .inv-badge  { background:var(--g-accent); color:#0F172A; }
+    .inv-card.feat .inv-range  { color:#fff; }
+    .inv-card.feat h4          { color:#fff; }
+    .inv-card.feat p           { color:rgba(255,255,255,0.68); }
+    .inv-card.feat .inv-tag    { color:rgba(255,255,255,0.55); }
+
+    .inv-badge {
+      display:inline-block;
+      padding:4px 12px;
+      border-radius:var(--r-full);
+      font-size:0.7rem; font-weight:700;
+      text-transform:uppercase; letter-spacing:0.06em;
+      background:var(--bg-alt); color:var(--text-2);
+      margin-bottom:18px;
+    }
+    .inv-range {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:clamp(1.2rem,1.8vw+0.4rem,1.7rem);
+      font-weight:800; color:var(--primary);
+      margin-bottom:8px;
+    }
+    .inv-card h4 { margin-bottom:6px; }
+    .inv-card p  { font-size:0.875rem; margin-bottom:18px; }
+    .inv-tag     { font-size:0.78rem; color:var(--text-3); display:flex; align-items:center; gap:6px; }
+    .inv-tag::before { content:'→'; color:var(--accent); }
+
+    /* ==========================================
+       STATS BAND
+    ========================================== */
+    .stats-band {
+      background:var(--primary-dk);
+      position:relative; overflow:hidden;
+    }
+    .stats-band::before {
+      content:'';
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 55% 120% at 80% 50%, rgba(37,99,235,0.28) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 100% at 15% 50%, rgba(232,160,32,0.14) 0%, transparent 60%);
+    }
+    .stats-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:clamp(24px,5vw,64px);
+      position:relative;
+    }
+    .stat-item { text-align:center; }
+    .stat-num {
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-size:clamp(2.4rem,4.5vw+0.4rem,4rem);
+      font-weight:800; color:#fff; line-height:1; margin-bottom:8px;
+    }
+    .stat-num .acc { color:var(--accent); }
+    .stat-label { font-size:0.8rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em; }
+
+    /* ==========================================
+       TESTIMONIALS
+    ========================================== */
+    .testi-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));
+      gap:clamp(14px,2vw,22px);
+    }
+    .testi-card {
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--r-lg);
+      padding:clamp(24px,3vw,40px);
+      transition:all 0.35s var(--ease);
+      position:relative;
+    }
+    .testi-card::before {
+      content:'"';
+      position:absolute; top:16px; right:24px;
+      font-size:5rem; color:var(--border);
+      font-family:'Bricolage Grotesque',sans-serif;
+      font-weight:800; line-height:1;
+      transition:color 0.3s var(--ease);
+    }
+    .testi-card:hover { transform:translateY(-7px); box-shadow:var(--sh-xl); }
+    .testi-card:hover::before { color:rgba(26,60,110,0.08); }
+
+    .stars { color:var(--accent); font-size:0.95rem; letter-spacing:2px; margin-bottom:14px; }
+    .testi-quote {
+      color:var(--text); font-size:clamp(0.875rem,0.9vw+0.4rem,1rem);
+      font-style:italic; line-height:1.75; margin-bottom:24px;
+    }
+    .testi-author { display:flex; align-items:center; gap:12px; }
+    .av {
+      width:46px; height:46px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:0.85rem; color:#fff; flex-shrink:0;
+    }
+    .av-name { font-weight:600; color:var(--text); font-size:0.9rem; }
+    .av-role { font-size:0.76rem; color:var(--text-3); margin-top:2px; }
+
+    /* ==========================================
+       CTA / CONTACT
+    ========================================== */
+    .cta-sec {
+      background:var(--g-hero);
+      position:relative; overflow:hidden;
+    }
+    .cta-sec::before {
+      content:'';
+      position:absolute;
+      width:80vw; height:80vw;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      background:radial-gradient(circle, rgba(232,160,32,0.1) 0%, transparent 55%);
+    }
+
+    .cta-inner {
+      position:relative; z-index:1;
+      max-width:720px; margin:0 auto; text-align:center;
+    }
+    .cta-inner h2 { color:#fff; margin-bottom:14px; }
+    .cta-inner > p { color:rgba(255,255,255,0.62); margin-bottom:40px; }
+
+    .form-glass {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.11);
+      border-radius:var(--r-xl);
+      padding:clamp(24px,4vw,48px);
+      text-align:left;
+      backdrop-filter:blur(14px);
+    }
+    .form-glass h3 { color:#fff; margin-bottom:22px; font-size:1.15rem; }
+
+    .f-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+    .f-group label {
+      display:block; font-size:0.78rem; font-weight:600;
+      color:rgba(255,255,255,0.55); margin-bottom:6px;
+      text-transform:uppercase; letter-spacing:0.04em;
+    }
+    .f-input {
+      width:100%; height:52px;
+      padding:0 16px;
+      border-radius:var(--r-sm);
+      border:1px solid rgba(255,255,255,0.11);
+      background:rgba(255,255,255,0.07);
+      color:#fff;
+      font-family:'Inter',sans-serif; font-size:0.9rem;
+      outline:none;
+      transition:border-color 0.2s var(--ease);
+    }
+    .f-input::placeholder { color:rgba(255,255,255,0.28); }
+    .f-input:focus { border-color:rgba(232,160,32,0.5); }
+    select.f-input {
+      background:rgba(20,29,46,0.92);
+      color:rgba(255,255,255,0.75);
+      cursor:pointer;
+    }
+    .f-note {
+      font-size:0.74rem; color:rgba(255,255,255,0.38);
+      margin-bottom:18px; line-height:1.6;
+    }
+    .f-note a { color:rgba(232,160,32,0.75); }
+
+    .form-success {
+      display:none; text-align:center; padding:32px 0;
+    }
+    .form-success .tick { font-size:3rem; margin-bottom:16px; }
+    .form-success h3 { color:#fff; margin-bottom:8px; }
+    .form-success p  { color:rgba(255,255,255,0.6); }
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
+    footer {
+      background:#040810;
+      color:rgba(255,255,255,0.65);
+      padding:clamp(56px,7vw,104px) 0 0;
+    }
+    .foot-grid {
+      display:grid;
+      grid-template-columns:1.6fr 1fr 1fr 1.3fr;
+      gap:clamp(32px,4vw,64px);
+      padding-bottom:clamp(48px,6vw,80px);
+      border-bottom:1px solid rgba(255,255,255,0.07);
+    }
+    .foot-brand .logo { color:#fff; margin-bottom:16px; }
+    .foot-brand p { font-size:0.875rem; line-height:1.75; margin-bottom:8px; }
+    .foot-ifc {
+      font-size:0.74rem; color:rgba(255,255,255,0.3);
+      line-height:1.65; margin-bottom:20px;
+    }
+    .foot-ifc strong { color:rgba(255,255,255,0.48); }
+    .foot-socials { display:flex; gap:8px; }
+    .soc {
+      width:38px; height:38px;
+      border-radius:var(--r-sm);
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.05);
+      display:flex; align-items:center; justify-content:center;
+      font-size:0.85rem; font-weight:700;
+      color:rgba(255,255,255,0.55);
+      cursor:pointer;
+      transition:all 0.2s var(--ease);
+    }
+    .soc:hover { background:var(--primary-lt); border-color:transparent; color:#fff; transform:translateY(-2px); }
+
+    .foot-col h5 {
+      color:rgba(255,255,255,0.88); font-size:0.875rem;
+      font-weight:600; margin-bottom:18px;
+    }
+    .foot-col ul { list-style:none; display:flex; flex-direction:column; gap:11px; }
+    .foot-col a {
+      font-size:0.875rem; color:rgba(255,255,255,0.46);
+      transition:color 0.2s var(--ease);
+    }
+    .foot-col a:hover { color:rgba(255,255,255,0.88); }
+
+    .foot-nl h5 { color:rgba(255,255,255,0.88); font-size:0.875rem; font-weight:600; margin-bottom:6px; }
+    .foot-nl p  { font-size:0.875rem; margin-bottom:14px; }
+    .nl-form { display:flex; gap:8px; }
+    .nl-input {
+      flex:1; height:46px; padding:0 14px;
+      border-radius:var(--r-sm);
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.06);
+      color:#fff; font-family:'Inter',sans-serif; font-size:0.875rem;
+      outline:none;
+      transition:border-color 0.2s var(--ease);
+    }
+    .nl-input::placeholder { color:rgba(255,255,255,0.28); }
+    .nl-input:focus { border-color:rgba(43,93,160,0.6); }
+    .nl-btn {
+      width:46px; height:46px; flex-shrink:0;
+      border-radius:var(--r-sm); border:none;
+      background:var(--g-primary); color:#fff;
+      font-size:1.1rem; cursor:pointer;
+      transition:all 0.2s var(--ease);
+    }
+    .nl-btn:hover { transform:scale(1.06); box-shadow:var(--sh-pri); }
+
+    .foot-bottom {
+      padding:22px 0;
+      display:flex; align-items:center; justify-content:space-between;
+      flex-wrap:wrap; gap:14px;
+    }
+    .foot-bottom p { font-size:0.8rem; }
+    .foot-legal { display:flex; gap:20px; }
+    .foot-legal a { font-size:0.8rem; color:rgba(255,255,255,0.38); transition:color 0.2s var(--ease); }
+    .foot-legal a:hover { color:rgba(255,255,255,0.8); }
+
+    /* ==========================================
+       FLOATING ELEMENTS
+    ========================================== */
+    .wa-btn {
+      position:fixed; bottom:24px; right:24px; z-index:900;
+      width:60px; height:60px;
+      background:#25D366; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 8px 28px rgba(37,211,102,0.4);
+      transition:all 0.3s var(--ease-spring);
+      cursor:pointer; text-decoration:none;
+    }
+    .wa-btn:hover { transform:scale(1.12) translateY(-4px); box-shadow:0 16px 44px rgba(37,211,102,0.5); }
+    .wa-btn svg { width:28px; height:28px; fill:#fff; }
+
+    .btt {
+      position:fixed; bottom:24px; left:24px; z-index:900;
+      width:46px; height:46px;
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:var(--r-sm);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; color:var(--text-2); font-size:1rem;
+      box-shadow:var(--sh-md);
+      opacity:0; transform:translateY(14px);
+      transition:all 0.3s var(--ease);
+    }
+    .btt.show { opacity:1; transform:translateY(0); }
+    .btt:hover { background:var(--primary); color:#fff; border-color:transparent; }
+
+    /* Cookie */
+    .cookie {
+      position:fixed; bottom:24px; left:50%;
+      transform:translateX(-50%) translateY(130px);
+      z-index:1000;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--r-lg);
+      padding:18px 22px;
+      box-shadow:var(--sh-xl);
+      max-width:500px; width:calc(100% - 48px);
+      display:flex; gap:18px; align-items:center;
+      transition:transform 0.45s var(--ease-spring);
+    }
+    .cookie.show { transform:translateX(-50%) translateY(0); }
+    .cookie p { font-size:0.85rem; flex:1; margin:0; }
+    .cookie a { color:var(--primary-lt); }
+    .cookie-btns { display:flex; gap:8px; flex-shrink:0; }
+    .cbtn {
+      height:38px; padding:0 16px; border-radius:var(--r-sm);
+      font-size:0.82rem; font-weight:600; cursor:pointer;
+      transition:all 0.2s var(--ease); font-family:'Inter',sans-serif;
+    }
+    .cbtn-dec { background:transparent; border:1.5px solid var(--border-dark); color:var(--text-2); }
+    .cbtn-dec:hover { background:var(--bg-alt); }
+    .cbtn-acc { background:var(--g-primary); border:none; color:#fff; }
+    .cbtn-acc:hover { transform:scale(1.04); }
+
+    /* ==========================================
+       ANIMATIONS
+    ========================================== */
+    .fu { opacity:0; transform:translateY(36px); transition:opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+    .fi { opacity:0; transition:opacity 0.6s var(--ease-out); }
+    .si { opacity:0; transform:scale(0.9); transition:opacity 0.6s var(--ease-out), transform 0.6s var(--ease-spring); }
+    .fu.v,.fi.v,.si.v { opacity:1; transform:none; }
+
+    /* Stagger delays via inline --d custom property */
+
+    /* Skeleton */
+    .skeleton {
+      background:linear-gradient(90deg, var(--bg-alt) 25%, var(--border) 50%, var(--bg-alt) 75%);
+      background-size:200% 100%;
+      animation:shimmer 1.4s infinite;
+      border-radius:var(--r-sm);
+    }
+    @keyframes shimmer { to { background-position:-200% 0; } }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width:7px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--border); border-radius:4px; }
+    ::-webkit-scrollbar-thumb:hover { background:var(--text-3); }
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+    @media (max-width:1080px) {
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-visual, .hero-badge { display:none; }
+      .about-grid { grid-template-columns:1fr; }
+      .about-visual { order:-1; }
+      .foot-grid { grid-template-columns:1fr 1fr; }
+      .steps { grid-template-columns:1fr 1fr 1fr; }
+      .steps::before { display:none; }
+      .stats-grid { grid-template-columns:repeat(2,1fr); gap:clamp(24px,4vw,48px); }
+    }
+    @media (max-width:768px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .cat-grid { grid-template-columns:1fr 1fr; }
+      .steps { grid-template-columns:1fr; }
+      .f-row { grid-template-columns:1fr; }
+      .foot-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:540px) {
+      .hero-cta { flex-direction:column; }
+      .hero-cta .btn { width:100%; }
+      .cat-grid { grid-template-columns:1fr; }
+      .stats-grid { grid-template-columns:1fr 1fr; gap:24px; }
+      .foot-bottom { flex-direction:column; text-align:center; }
+      .foot-legal { flex-wrap:wrap; justify-content:center; gap:14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- IFC Disclosure Bar -->
+<div class="ifc-bar">
+  BusinessIQ is an <strong>Authorized Independent Franchise Consultant (IFC)</strong> of <b>Franchise India Consultants Pvt. Ltd.</b> &nbsp;·&nbsp; All leads &amp; enquiries are processed through Franchise India.
+</div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo" aria-label="BusinessIQ home">
+        <img src="assets/logo-icon.svg" alt="" loading="lazy" aria-hidden="true" />
+        Business<span>IQ</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#investment">Investment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+        <a href="#contact" class="btn-nav">Get Started →</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="drawer" role="dialog" aria-label="Navigation">
+  <a href="#about">About</a>
+  <a href="#categories">Categories</a>
+  <a href="#process">Process</a>
+  <a href="#investment">Investment</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary" style="margin-top:20px;justify-content:center;">Get Started →</a>
+</div>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-grid-bg"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Left: Content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow fu" style="--d:0s">
+          <div class="pulse-dot"></div>
+          Authorized Franchise Consultant
+        </div>
+        <h1 class="hero-title fu" style="--d:0.1s">
+          Navigate Your<br><span class="grad-text">Franchise</span><br>Business.
+        </h1>
+        <p class="hero-sub fu" style="--d:0.2s">
+          We connect ambitious Indian investors with 50+ world-class international franchise brands — fully supported from selection to launch and beyond.
+        </p>
+        <div class="hero-cta fu" style="--d:0.3s">
+          <a href="#contact" class="btn btn-accent magnetic">Explore Opportunities →</a>
+          <a href="#about" class="btn btn-ghost">Learn More</a>
+        </div>
+        <div class="hero-stats fu" style="--d:0.4s" role="list" aria-label="Key metrics">
+          <div role="listitem">
+            <div class="hstat-num">50<span class="acc">+</span></div>
+            <div class="hstat-label">Brands</div>
+          </div>
+          <div role="listitem">
+            <div class="hstat-num">18<span class="acc">+</span></div>
+            <div class="hstat-label">Countries</div>
+          </div>
+          <div role="listitem">
+            <div class="hstat-num">18<span class="acc"> Cities</span></div>
+            <div class="hstat-label">Active</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual Cards -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-card si" style="--d:0.25s">
+          <div class="hv-stat-grid">
+            <div class="hv-stat"><span class="n">50<span class="a">+</span></span><span class="l">Int'l Brands</span></div>
+            <div class="hv-stat"><span class="n">₹5L<span class="a">+</span></span><span class="l">Min. Invest</span></div>
+            <div class="hv-stat"><span class="n">5</span><span class="l">Sectors</span></div>
+            <div class="hv-stat"><span class="n">18<span class="a">+</span></span><span class="l">Cities</span></div>
+          </div>
+        </div>
+        <div class="hv-card si" style="--d:0.35s">
+          <div class="hv-mini">
+            <div class="hv-icon" style="background:rgba(232,160,32,0.15)">🍔</div>
+            <div><h5>Food & Beverage</h5><p>20+ QSR, Café & Restaurant brands</p></div>
+          </div>
+        </div>
+        <div class="hv-card si" style="--d:0.42s">
+          <div class="hv-mini">
+            <div class="hv-icon" style="background:rgba(99,102,241,0.15)">📚</div>
+            <div><h5>Education & Coaching</h5><p>World-class training & skill brands</p></div>
+          </div>
+        </div>
+        <div class="hv-card si" style="--d:0.49s">
+          <div class="hv-mini">
+            <div class="hv-icon" style="background:rgba(16,185,129,0.15)">💪</div>
+            <div><h5>Health & Wellness</h5><p>Gyms, studios & wellness clinics</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════ -->
+<div class="trust-bar" role="complementary" aria-label="Trust indicators">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item fi"><span class="tick">✦</span> Brands from 18+ Countries</div>
+      <div class="trust-item fi"><span class="tick">✦</span> INR 5 Lacs – 1.5 Cr+ Range</div>
+      <div class="trust-item fi"><span class="tick">✦</span> End-to-End Launch Support</div>
+      <div class="trust-item fi"><span class="tick">✦</span> Master · Area Developer · Unit Models</div>
+      <div class="trust-item fi"><span class="tick">✦</span> Free Consultation</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     ABOUT
+════════════════════════════════════ -->
+<section class="section" id="about" aria-labelledby="about-h" style="background:var(--bg)">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Visual -->
+      <div class="fu" style="--d:0s">
+        <div class="about-card">
+          <div class="about-icon-grid">
+            <div class="aic"><div class="em">🌐</div><h5>Global Brands</h5><p>50+ international</p></div>
+            <div class="aic"><div class="em">🤝</div><h5>Authorized</h5><p>IFC Consultant</p></div>
+            <div class="aic"><div class="em">🏙️</div><h5>Pan India</h5><p>18+ cities</p></div>
+            <div class="aic"><div class="em">🎯</div><h5>Match-Made</h5><p>Right brand, right city</p></div>
+          </div>
+          <p class="about-note">All enquiries processed through our principal consultancy.</p>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="about-text fu" style="--d:0.15s">
+        <div class="chip chip-primary">Who We Are</div>
+        <h2 id="about-h">Your Authorized Gateway to International Franchising</h2>
+        <p>BusinessIQ is an <strong>Authorized Independent Franchise Consultant (IFC)</strong> — giving ambitious investors direct access to a curated portfolio of 50+ proven international brands across India.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="9 2 4 8 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <p>50+ pre-vetted international brands across food, wellness, education & more</p>
+          </div>
+          <div class="feat-item">
+            <div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="9 2 4 8 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <p>Master Franchise, Area Developer, and Unit Franchise models</p>
+          </div>
+          <div class="feat-item">
+            <div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="9 2 4 8 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <p>End-to-end support: legal, setup, training, supply chain &amp; operations</p>
+          </div>
+          <div class="feat-item">
+            <div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="9 2 4 8 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <p>Investment range: INR 5 Lacs to 1.5 Crore+ across all tiers</p>
+          </div>
+          <div class="feat-item">
+            <div class="feat-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="9 2 4 8 1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <p>Active presence across 18+ Indian cities &amp; territories</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary magnetic">Start Your Journey →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     CATEGORIES
+════════════════════════════════════ -->
+<section class="section" id="categories" style="background:var(--bg-alt)" aria-labelledby="cat-h">
+  <div class="container">
+    <div class="sec-head fu">
+      <div class="chip chip-accent">Franchise Sectors</div>
+      <h2 id="cat-h">Explore by Category</h2>
+      <p>From quick-service restaurants to business coaching — find the right sector for your goals and city.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card fu" style="--d:0s" role="button" tabindex="0" aria-label="Food and Beverage">
+        <div class="cat-ico">🍔</div>
+        <h3>Food &amp; Beverage</h3>
+        <p>QSR, cafés, bakeries, restaurants, bubble tea &amp; specialty food concepts</p>
+        <div class="cat-foot"><span class="cat-count">20+ options</span><span class="cat-arr">↗</span></div>
+      </div>
+      <div class="cat-card fu" style="--d:0.07s">
+        <div class="cat-ico">📚</div>
+        <h3>Education &amp; Training</h3>
+        <p>Language schools, kids programs, professional skill training &amp; certification</p>
+        <div class="cat-foot"><span class="cat-count">12+ options</span><span class="cat-arr">↗</span></div>
+      </div>
+      <div class="cat-card fu" style="--d:0.14s">
+        <div class="cat-ico">💪</div>
+        <h3>Health &amp; Wellness</h3>
+        <p>Gyms, Pilates studios, skin clinics, wellness centres &amp; fitness concepts</p>
+        <div class="cat-foot"><span class="cat-count">10+ options</span><span class="cat-arr">↗</span></div>
+      </div>
+      <div class="cat-card fu" style="--d:0.21s">
+        <div class="cat-ico">💼</div>
+        <h3>Business Services</h3>
+        <p>Coaching, consulting, B2B networking &amp; professional services franchises</p>
+        <div class="cat-foot"><span class="cat-count">8+ options</span><span class="cat-arr">↗</span></div>
+      </div>
+      <div class="cat-card fu" style="--d:0.28s">
+        <div class="cat-ico">🛍️</div>
+        <h3>Retail &amp; Lifestyle</h3>
+        <p>Specialty retail, laundry, entertainment &amp; lifestyle brand formats</p>
+        <div class="cat-foot"><span class="cat-count">8+ options</span><span class="cat-arr">↗</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:clamp(32px,4vw,48px);" class="fu" style="--d:0.35s">
+      <a href="brands.html" class="btn btn-outline">View Full Brand Catalogue →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     PROCESS
+════════════════════════════════════ -->
+<section class="section" id="process" style="background:var(--bg)" aria-labelledby="proc-h">
+  <div class="container">
+    <div class="sec-head fu">
+      <div class="chip chip-primary">How It Works</div>
+      <h2 id="proc-h">Our Simple 5-Step Process</h2>
+      <p>From first conversation to opening day — we guide you through every step with expert support.</p>
+    </div>
+    <div class="steps">
+      <div class="step fu" style="--d:0s">
+        <div class="step-n">01</div>
+        <h4>Free Consultation</h4>
+        <p>Share your goals, budget &amp; preferred city</p>
+      </div>
+      <div class="step fu" style="--d:0.07s">
+        <div class="step-n">02</div>
+        <h4>Investor Acquisition</h4>
+        <p>Register &amp; pay consultation fee to proceed</p>
+        <div style="margin-top:10px;display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;background:rgba(232,160,32,0.12);border:1px solid rgba(232,160,32,0.25);font-size:0.7rem;font-weight:700;color:#9A6700;letter-spacing:0.04em;">💳 Fee Payable</div>
+      </div>
+      <div class="step fu" style="--d:0.14s">
+        <div class="step-n">03</div>
+        <h4>Brand Matching</h4>
+        <p>We shortlist the best-fit brands for you</p>
+      </div>
+      <div class="step fu" style="--d:0.21s">
+        <div class="step-n">04</div>
+        <h4>Due Diligence</h4>
+        <p>Review financials, agreements &amp; site options</p>
+      </div>
+      <div class="step fu" style="--d:0.28s">
+        <div class="step-n">05</div>
+        <h4>Setup &amp; Training</h4>
+        <p>Site, team, brand onboarding &amp; launch prep</p>
+      </div>
+      <div class="step fu" style="--d:0.35s">
+        <div class="step-n">06</div>
+        <h4>Launch &amp; Scale</h4>
+        <p>Open doors &amp; grow with ongoing support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     INVESTMENT TIERS
+════════════════════════════════════ -->
+<section class="section" id="investment" style="background:var(--bg-alt)" aria-labelledby="inv-h">
+  <div class="container">
+    <div class="sec-head fu">
+      <div class="chip chip-accent">Investment Overview</div>
+      <h2 id="inv-h">Choose Your Investment Level</h2>
+      <p>Franchise opportunities across every investment tier — from lean kiosk concepts to master franchise rights.</p>
+    </div>
+    <div class="inv-grid">
+      <div class="inv-card fu" style="--d:0s">
+        <div class="inv-badge">Starter</div>
+        <div class="inv-range">INR 5 – 25 Lacs</div>
+        <h4>Entry Level</h4>
+        <p>Coaching, kiosk formats, kids education &amp; micro-franchise concepts</p>
+        <div class="inv-tag">Ideal for first-time investors</div>
+      </div>
+      <div class="inv-card feat fu" style="--d:0.08s">
+        <div class="inv-badge">Most Popular</div>
+        <div class="inv-range">INR 25 – 50 Lacs</div>
+        <h4>Growth Tier</h4>
+        <p>Café concepts, QSR restaurants, wellness studios &amp; training centres</p>
+        <div class="inv-tag" style="color:rgba(255,255,255,0.5)">Best ROI potential</div>
+      </div>
+      <div class="inv-card fu" style="--d:0.16s">
+        <div class="inv-badge">Established</div>
+        <div class="inv-range">INR 50 – 80 Lacs</div>
+        <h4>Premium Tier</h4>
+        <p>Full-format restaurants, speciality F&amp;B &amp; premium service brands</p>
+        <div class="inv-tag">Proven market demand</div>
+      </div>
+      <div class="inv-card fu" style="--d:0.24s">
+        <div class="inv-badge">Enterprise</div>
+        <div class="inv-range">INR 1 Cr+</div>
+        <h4>Master / Premium</h4>
+        <p>Master franchise rights, large-format gyms &amp; entertainment concepts</p>
+        <div class="inv-tag">Territory-level rights</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     STATS BAND
+════════════════════════════════════ -->
+<section class="stats-band section-sm" aria-label="Key statistics">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fu" style="--d:0s">
+        <div class="stat-num"><span class="ctr" data-t="50">50</span><span class="acc">+</span></div>
+        <div class="stat-label">International Brands</div>
+      </div>
+<div class="stat-item fu" style="--d:0.16s">
+        <div class="stat-num"><span class="ctr" data-t="18">18</span><span class="acc">+</span></div>
+        <div class="stat-label">Active Cities</div>
+      </div>
+      <div class="stat-item fu" style="--d:0.24s">
+        <div class="stat-num"><span class="ctr" data-t="18">18</span><span class="acc">+</span></div>
+        <div class="stat-label">Countries of Origin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     CTA / CONTACT
+════════════════════════════════════ -->
+<section class="cta-sec section" id="contact" aria-labelledby="cta-h">
+  <div class="container">
+    <div class="cta-inner fu">
+      <div class="chip chip-accent" style="margin-bottom:18px;">Get Started Today</div>
+      <h2 id="cta-h">Ready to Own Your Franchise?</h2>
+      <p>Book a free 30-minute consultation with our franchise advisor — no obligation, no commitment.</p>
+
+      <div class="form-glass">
+        <h3>Request Free Franchise Consultation</h3>
+        <form id="cForm" novalidate aria-label="Consultation request">
+          <div class="f-row">
+            <div class="f-group"><label for="fn">First Name *</label><input class="f-input" type="text" id="fn" name="firstName" required placeholder="Rahul" autocomplete="given-name" /></div>
+            <div class="f-group"><label for="ln">Last Name *</label><input class="f-input" type="text" id="ln" name="lastName" required placeholder="Sharma" autocomplete="family-name" /></div>
+          </div>
+          <div class="f-row">
+            <div class="f-group"><label for="em">Email *</label><input class="f-input" type="email" id="em" name="email" required placeholder="rahul@example.com" autocomplete="email" /></div>
+            <div class="f-group"><label for="ph">Mobile *</label><input class="f-input" type="tel" id="ph" name="phone" required placeholder="+91 98765 43210" autocomplete="tel" /></div>
+          </div>
+          <div class="f-row">
+            <div class="f-group"><label for="ct">City *</label><input class="f-input" type="text" id="ct" name="city" required placeholder="Delhi, Mumbai…" /></div>
+            <div class="f-group">
+              <label for="bg">Investment Budget</label>
+              <select class="f-input" id="bg" name="budget">
+                <option value="">Select budget…</option>
+                <option>INR 5 – 25 Lakhs</option>
+                <option>INR 25 – 50 Lakhs</option>
+                <option>INR 50 Lakhs – 1 Crore</option>
+                <option>INR 1 Crore+</option>
+              </select>
+            </div>
+          </div>
+          <p class="f-note">By submitting you agree to our <a href="privacy.html">Privacy Policy</a>. Your details will be shared with Franchise India Consultants Pvt. Ltd. No payment is collected by BusinessIQ.</p>
+          <button type="submit" class="btn btn-accent" style="width:100%;justify-content:center;">Request Free Consultation →</button>
+        </form>
+        <div class="form-success" id="fSuccess">
+          <div class="tick">✅</div>
+          <h3>Thank You!</h3>
+          <p>A franchise advisor will contact you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo" aria-label="BusinessIQ home">
+          <img src="assets/logo-icon.svg" alt="" loading="lazy" aria-hidden="true" style="filter:brightness(0) invert(1)" />
+          Business<span>IQ</span>
+        </a>
+        <p>Connecting ambitious Indian investors with world-class international franchise brands — guidance at every step.</p>
+        <div class="foot-socials">
+          <div class="soc" aria-label="LinkedIn">in</div>
+          <div class="soc" aria-label="Facebook">f</div>
+          <div class="soc" aria-label="Instagram">ig</div>
+          <div class="soc" aria-label="YouTube">▶</div>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="brands.html">Brand Portfolio</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#investment">Investment Models</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Franchise Models</h5>
+        <ul>
+          <li><a href="#investment">Master Franchise</a></li>
+          <li><a href="#investment">Area Developer</a></li>
+          <li><a href="#investment">Unit Franchise</a></li>
+          <li><a href="#categories">Food &amp; Beverage</a></li>
+          <li><a href="#categories">Education</a></li>
+          <li><a href="#categories">Health &amp; Wellness</a></li>
+        </ul>
+      </div>
+      <div class="foot-nl">
+        <h5>Stay Updated</h5>
+        <p>New brand launches &amp; opportunities to your inbox.</p>
+        <form class="nl-form" id="nlForm" novalidate>
+          <input class="nl-input" type="email" placeholder="Your email" required aria-label="Newsletter email" />
+          <button class="nl-btn" type="submit" aria-label="Subscribe">→</button>
+        </form>
+        <p style="font-size:0.72rem;margin-top:10px;color:rgba(255,255,255,0.28);">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; 2026 BusinessIQ.co.in. All Rights Reserved. | Authorized IFC of <strong>Franchise India Consultants Pvt. Ltd.</strong></p>
+      <nav class="foot-legal" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919999999999?text=Hi%2C+I%27m+interested+in+franchise+opportunities." class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Back to Top -->
+<button class="btt" id="btt" aria-label="Back to top">↑</button>
+
+<!-- Cookie Banner -->
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookie notice">
+  <p>We use cookies to improve your experience. <a href="privacy.html">Learn more</a>.</p>
+  <div class="cookie-btns">
+    <button class="cbtn cbtn-dec" id="cDec">Decline</button>
+    <button class="cbtn cbtn-acc" id="cAcc">Accept</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ── THEME ── */
+  const html   = document.documentElement;
+  const tBtn   = document.getElementById('themeBtn');
+  const saved  = localStorage.getItem('biq2-theme') || 'light';
+  html.setAttribute('data-theme', saved);
+  tBtn.textContent = saved === 'dark' ? '☀️' : '🌙';
+
+  tBtn.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    tBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('biq2-theme', next);
+  });
+
+  /* ── NAV SCROLL ── */
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+    document.getElementById('btt').classList.toggle('show', window.scrollY > 400);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── HAMBURGER ── */
+  const hbg    = document.getElementById('hamburger');
+  const drawer = document.getElementById('drawer');
+  hbg.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    hbg.classList.toggle('open', open);
+    hbg.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    hbg.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  /* ── INTERSECTION OBSERVER ── */
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const d  = el.style.getPropertyValue('--d') || '0s';
+      setTimeout(() => el.classList.add('v'), parseFloat(d) * 1000);
+      if (el.classList.contains('ctr')) animCount(el);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fu,.fi,.si,.ctr').forEach(el => obs.observe(el));
+
+  /* ── COUNTER ANIMATION ── */
+  function animCount(el) {
+    const target = parseInt(el.getAttribute('data-t'));
+    const dur    = 1800;
+    const start  = performance.now();
+    const easeOut = t => 1 - Math.pow(1 - t, 3);
+    (function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      el.textContent = Math.floor(easeOut(p) * target);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    })(start);
+  }
+
+  /* ── MAGNETIC BUTTONS ── */
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width  / 2) * 0.22;
+      const y = (e.clientY - r.top  - r.height / 2) * 0.22;
+      btn.style.transform = `translate(${x}px,${y}px)`;
+    });
+    btn.addEventListener('mouseleave', () => btn.style.transform = '');
+  });
+
+  /* ── BACK TO TOP ── */
+  document.getElementById('btt').addEventListener('click', () =>
+    window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ── COOKIE ── */
+  const ck = document.getElementById('cookie');
+  if (!localStorage.getItem('biq2-ck'))
+    setTimeout(() => ck.classList.add('show'), 1600);
+  const closeCk = (val) => {
+    localStorage.setItem('biq2-ck', val);
+    ck.classList.remove('show');
+  };
+  document.getElementById('cAcc').addEventListener('click', () => closeCk('yes'));
+  document.getElementById('cDec').addEventListener('click', () => closeCk('no'));
+
+  /* ── CONTACT FORM ── */
+  document.getElementById('cForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    await new Promise(r => setTimeout(r, 1300));
+    e.target.style.display = 'none';
+    document.getElementById('fSuccess').style.display = 'block';
+  });
+
+  /* ── NEWSLETTER ── */
+  document.getElementById('nlForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✓';
+    btn.style.background = '#059669';
+    setTimeout(() => { btn.textContent = '→'; btn.style.background = ''; }, 3000);
+  });
+
+  /* ── SMOOTH ANCHORS ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

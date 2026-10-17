@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Brand Portfolio | BusinessIQ.co.in</title>
+  <meta name="description" content="Explore all 50+ international franchise brands available in India through BusinessIQ. Filter by category, investment level, or country of origin." />
+  <meta name="keywords" content="franchise brands india, international franchise list, franchise opportunities india 2026, master franchise brands" />
+  <link rel="canonical" href="https://www.businessiq.co.in/brands.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .brands-hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 6rem 0 3.5rem;
+      margin-top: 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .brands-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .brands-hero h1 { color: #fff; position: relative; }
+    .brands-hero p { color: rgba(255,255,255,0.75); max-width: 560px; margin: 0.75rem auto 0; font-size: 1.05rem; position: relative; }
+
+    .brands-page { padding: 3.5rem 0 5rem; background: var(--bg-light); }
+
+    .brands-toolbar {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 2rem;
+      background: #fff;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .toolbar-group { display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 160px; }
+    .toolbar-group label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .toolbar-group select {
+      padding: 0.6rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      color: var(--text);
+      background: var(--bg-light);
+      outline: none;
+      cursor: pointer;
+      transition: border-color var(--transition);
+    }
+    .toolbar-group select:focus { border-color: var(--primary); }
+    .search-group { flex: 2; min-width: 220px; }
+    .search-group input {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font);
+      font-size: 0.88rem;
+      color: var(--text);
+      background: var(--bg-light);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .search-group input:focus { border-color: var(--primary); background: #fff; }
+    .results-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .results-count span { color: var(--primary); font-weight: 700; }
+
+    .brand-full-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .brand-full-card:hover {
+      box-shadow: var(--card-shadow);
+      transform: translateY(-4px);
+      border-color: rgba(26,60,110,0.2);
+    }
+    .brand-full-card[data-hidden="true"] { display: none; }
+    .bfc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+    .bfc-name { font-weight: 800; color: var(--primary); font-size: 1.05rem; line-height: 1.3; }
+    .bfc-origin {
+      font-size: 0.75rem;
+      background: var(--bg-light);
+      color: var(--text-muted);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .bfc-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .bfc-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(26,60,110,0.07);
+      color: var(--primary);
+    }
+    .bfc-model {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(232,160,32,0.1);
+      color: var(--accent-dark);
+    }
+    .bfc-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .bfc-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+    .bfc-invest { font-weight: 700; color: var(--success); font-size: 0.9rem; }
+    .bfc-enquire {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border: 1.5px solid var(--primary);
+      border-radius: 6px;
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+    .bfc-enquire:hover { background: var(--primary); color: #fff; }
+
+    .no-results {
+      text-align: center;
+      padding: 4rem 2rem;
+      display: none;
+      grid-column: 1 / -1;
+    }
+    .no-results.visible { display: block; }
+    .no-results h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    .no-results p { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<!-- IFC DISCLOSURE BAR -->
+<div style="background:#1a3c6e;color:rgba(255,255,255,0.85);text-align:center;font-size:0.78rem;padding:7px 1rem;letter-spacing:0.02em;">
+  BusinessIQ is an <strong style="color:#e8a020;">Authorized Independent Franchise Consultant (IFC)</strong> of <strong style="color:#fff;">Franchise India Consultants Pvt. Ltd.</strong> &nbsp;|&nbsp; All leads &amp; enquiries are processed through Franchise India.
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="BusinessIQ home">
+        <img src="assets/logo-icon.svg" alt="" height="36" width="36" aria-hidden="true" />
+        Business<span>IQ</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="brands.html" style="color:var(--primary);font-weight:700;">Brands</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#investment">Investment</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get Started →</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="brands-hero">
+  <div class="container">
+    <span class="tag">Franchise India's Portfolio</span>
+    <h1>International Brand Catalogue</h1>
+    <p>Browse all 50+ international franchise brands from Franchise India's portfolio. All enquiries are facilitated through Franchise India Consultants Pvt. Ltd.</p>
+  </div>
+</div>
+
+<!-- BRANDS PAGE -->
+<div class="brands-page">
+  <div class="container">
+
+    <!-- Toolbar -->
+    <div class="brands-toolbar">
+      <div class="search-group toolbar-group">
+        <label for="searchBrand">Search Brands</label>
+        <input type="search" id="searchBrand" placeholder="e.g. Pizza, Coffee, Gym…" aria-label="Search brands" />
+      </div>
+      <div class="toolbar-group">
+        <label for="filterCat">Category</label>
+        <select id="filterCat" aria-label="Filter by category">
+          <option value="">All Categories</option>
+          <option>Food &amp; Beverage</option>
+          <option>Health &amp; Wellness</option>
+          <option>Education</option>
+          <option>Business Services</option>
+          <option>Retail &amp; Lifestyle</option>
+          <option>Entertainment</option>
+        </select>
+      </div>
+      <div class="toolbar-group">
+        <label for="filterBudget">Budget</label>
+        <select id="filterBudget" aria-label="Filter by budget">
+          <option value="">All Budgets</option>
+          <option value="starter">Under INR 25 Lacs</option>
+          <option value="growth">INR 25 – 50 Lacs</option>
+          <option value="established">INR 50 Lacs – 1 Cr</option>
+          <option value="premium">INR 1 Crore+</option>
+        </select>
+      </div>
+      <div class="toolbar-group">
+        <label for="filterOrigin">Country</label>
+        <select id="filterOrigin" aria-label="Filter by country of origin">
+          <option value="">All Countries</option>
+          <option>USA</option>
+          <option>UK</option>
+          <option>France</option>
+          <option>Australia</option>
+          <option>Canada</option>
+          <option>South Africa</option>
+          <option>Vietnam</option>
+          <option>Austria</option>
+          <option>Sri Lanka</option>
+          <option>Oman</option>
+          <option>Romania</option>
+          <option>International</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="results-count">Showing <span id="resultCount">38</span> brands</p>
+
+    <!-- Brands Grid -->
+    <div class="brands-grid" id="brandsGrid" style="grid-template-columns: repeat(auto-fill, minmax(300px,1fr));">
+
+      <!-- ── FOOD & BEVERAGE ── -->
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="France" data-invest-tier="growth" data-name="Frank's Famous Hot Dogs">
+        <div class="bfc-top"><div class="bfc-name">Frank's Famous Hot Dogs</div><span class="bfc-origin">🇫🇷 France</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Premium hot dog QSR concept from France. Simple ops, fast throughput, strong mall and food court presence.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 25 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="UK" data-invest-tier="growth" data-name="The Real Pizza Company">
+        <div class="bfc-top"><div class="bfc-name">The Real Pizza Company</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD / Master</span></div>
+        <p class="bfc-desc">Authentic hand-stretched artisan pizza from the UK. Dine-in and delivery format with a loyal following.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 40 – 50 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="USA" data-invest-tier="growth" data-name="Figaro's Pizza">
+        <div class="bfc-top"><div class="bfc-name">Figaro's Pizza</div><span class="bfc-origin">🇺🇸 USA</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Iconic American pizza chain with a proven 40-year franchise system. Take-and-bake plus dine-in.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 30 – 40 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="USA" data-invest-tier="growth" data-name="Smoothie Factory">
+        <div class="bfc-top"><div class="bfc-name">Smoothie Factory</div><span class="bfc-origin">🇺🇸 USA</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Health-focused smoothie and juice bar. Strong appeal to urban health-conscious customers. Low waste, high margins.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 25 – 35 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="South Africa" data-invest-tier="established" data-name="Barcelos">
+        <div class="bfc-top"><div class="bfc-name">Barcelos</div><span class="bfc-origin">🇿🇦 South Africa</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Master / AD</span></div>
+        <p class="bfc-desc">Famous flame-grilled Peri-Peri chicken brand with 1,200+ outlets globally. Huge dine-in brand recognition.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 70 – 80 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="France" data-invest-tier="growth" data-name="Bagelstein">
+        <div class="bfc-top"><div class="bfc-name">Bagelstein</div><span class="bfc-origin">🇫🇷 France</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD / Master</span></div>
+        <p class="bfc-desc">France's #1 bagel chain. Unique European concept with strong Instagram appeal for Indian metro markets.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 40 – 50 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Sri Lanka" data-invest-tier="growth" data-name="Tea Avenue">
+        <div class="bfc-top"><div class="bfc-name">Tea Avenue</div><span class="bfc-origin">🇱🇰 Sri Lanka</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / Master</span></div>
+        <p class="bfc-desc">Premium tea café experience rooted in Ceylon tea heritage. Café + retail format. Deeply cultural product fit for India.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 28 – 70 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Austria" data-invest-tier="growth" data-name="Coffeeshop Company">
+        <div class="bfc-top"><div class="bfc-name">Coffeeshop Company</div><span class="bfc-origin">🇦🇹 Austria</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Vienna-style premium coffee experience. Present in 30+ countries — brings European café culture to India.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 32 – 75 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Vietnam" data-invest-tier="starter" data-name="Happi Tea">
+        <div class="bfc-top"><div class="bfc-name">Happi Tea</div><span class="bfc-origin">🇻🇳 Vietnam</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Trendy Vietnamese bubble tea brand with vibrant branding. Kiosk format — low investment, extremely fast setup.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 16 – 21 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Vietnam" data-invest-tier="growth" data-name="Three O'Clock">
+        <div class="bfc-top"><div class="bfc-name">Three O'Clock</div><span class="bfc-origin">🇻🇳 Vietnam</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Vietnamese café concept with tea, coffee, and desserts. Strong afternoon traffic model with high repeat visits.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 35 – 78 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Oman" data-invest-tier="growth" data-name="Impasti Pizzeria">
+        <div class="bfc-top"><div class="bfc-name">Impasti Pizzeria</div><span class="bfc-origin">🇴🇲 Oman</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Authentic Italian-Omani pizza brand with wood-fired flavours. Compact format, dine-in + delivery.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 30 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="France" data-invest-tier="growth" data-name="Yogurt Factory">
+        <div class="bfc-top"><div class="bfc-name">Yogurt Factory</div><span class="bfc-origin">🇫🇷 France</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Premium frozen yogurt brand from France. Health-conscious dessert concept with high mall footfall.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 30 – 60 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Vietnam" data-invest-tier="growth" data-name="Viva Star Coffee">
+        <div class="bfc-top"><div class="bfc-name">Viva Star Coffee</div><span class="bfc-origin">🇻🇳 Vietnam</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Speciality Vietnamese coffee chain. Compact café format with growing demand for global coffee culture in India.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 35 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="UK" data-invest-tier="starter" data-name="Chocolate Bash">
+        <div class="bfc-top"><div class="bfc-name">Chocolate Bash</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Indulgent chocolate dessert brand with massive social media pull. Kiosk format — perfect for high-footfall malls.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 15 – 25 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="International" data-invest-tier="starter" data-name="Seven Fries">
+        <div class="bfc-top"><div class="bfc-name">Seven Fries</div><span class="bfc-origin">🌐 Europe</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Belgian-style loaded fries brand. Quick service, wide variety of flavours, very strong Gen-Z customer appeal.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 15 – 25 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="USA" data-invest-tier="growth" data-name="Sabrosa Tacos">
+        <div class="bfc-top"><div class="bfc-name">Sabrosa Tacos</div><span class="bfc-origin">🇺🇸 USA</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Authentic Tex-Mex taco concept riding the global Mexican food wave. Fast, fresh, and flavourful.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 30 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Romania" data-invest-tier="growth" data-name="Spartan">
+        <div class="bfc-top"><div class="bfc-name">Spartan</div><span class="bfc-origin">🇷🇴 Romania</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Fast-casual Mediterranean grill concept with shawarma, kebabs, and wraps. Eastern European street food with wide appeal.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 30 – 50 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="Canada" data-invest-tier="growth" data-name="Cinnzeo Bakery">
+        <div class="bfc-top"><div class="bfc-name">Cinnzeo Bakery</div><span class="bfc-origin">🇨🇦 Canada</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD / Master</span></div>
+        <p class="bfc-desc">Canadian cinnamon roll bakery with premium positioning. Mall-format — aroma marketing makes it a natural footfall magnet.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 25 – 40 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="UK" data-invest-tier="growth" data-name="BabaBoom">
+        <div class="bfc-top"><div class="bfc-name">BabaBoom</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Lebanese-inspired street food concept from UK. Rotisserie chicken and wraps with bold Middle Eastern flavours.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 35 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="International" data-invest-tier="starter" data-name="Coffee Buddy">
+        <div class="bfc-top"><div class="bfc-name">Coffee Buddy</div><span class="bfc-origin">🌐 Europe</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / Kiosk</span></div>
+        <p class="bfc-desc">Compact coffee kiosk brand optimised for office parks, hospitals, and transit hubs. Minimal staff, fast ROI.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 15 – 25 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Food & Beverage" data-origin="UK" data-invest-tier="growth" data-name="Oodles">
+        <div class="bfc-top"><div class="bfc-name">Oodles</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Food &amp; Beverage</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Asian noodle and Chinese street food brand from UK. Fast casual, vibrant, and well-loved across UK markets.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 25 – 40 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <!-- ── HEALTH & WELLNESS ── -->
+      <div class="brand-full-card" data-cat="Health & Wellness" data-origin="UK" data-invest-tier="premium" data-name="EasyGym">
+        <div class="bfc-top"><div class="bfc-name">EasyGym</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Health &amp; Wellness</span><span class="bfc-model">Master / AD</span></div>
+        <p class="bfc-desc">Budget gym chain with premium equipment, 24/7 access, and strong member retention. Proven model across 100+ UK clubs.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 1 Crore+</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Health & Wellness" data-origin="International" data-invest-tier="growth" data-name="Laser Skin">
+        <div class="bfc-top"><div class="bfc-name">Laser Skin</div><span class="bfc-origin">🌐 International</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Health &amp; Wellness</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Advanced laser hair removal and skin clinic. Medical-grade protocols with strong customer lifetime value.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 30 – 50 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Health & Wellness" data-origin="International" data-invest-tier="growth" data-name="Pilates Academy">
+        <div class="bfc-top"><div class="bfc-name">Pilates Academy</div><span class="bfc-origin">🌐 International</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Health &amp; Wellness</span><span class="bfc-model">Unit / Master</span></div>
+        <p class="bfc-desc">Premium Pilates and reformer studio. Boutique fitness concept with high ticket size and loyal member community.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 40 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <!-- ── EDUCATION ── -->
+      <div class="brand-full-card" data-cat="Education" data-origin="UK" data-invest-tier="growth" data-name="Pitman Training">
+        <div class="bfc-top"><div class="bfc-name">Pitman Training</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Education</span><span class="bfc-model">Unit / AD / Master</span></div>
+        <p class="bfc-desc">World's oldest professional skills training brand (est. 1837). Secretarial, IT, accountancy &amp; business courses.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 30 – 50 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Education" data-origin="International" data-invest-tier="growth" data-name="Direct English">
+        <div class="bfc-top"><div class="bfc-name">Direct English</div><span class="bfc-origin">🌐 International</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Education</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Leading English language training solution for professionals. Blended learning model with certification.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 40 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Education" data-origin="UK" data-invest-tier="starter" data-name="NLP4Kids">
+        <div class="bfc-top"><div class="bfc-name">NLP4Kids</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Education</span><span class="bfc-model">Unit / Practitioner</span></div>
+        <p class="bfc-desc">Children's NLP and confidence coaching. Therapy-meets-education approach for kids aged 4–16. Low overhead model.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 10 – 20 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Education" data-origin="UK" data-invest-tier="starter" data-name="Creation Station">
+        <div class="bfc-top"><div class="bfc-name">Creation Station</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Education</span><span class="bfc-model">Unit</span></div>
+        <p class="bfc-desc">Creative arts and crafts programs for children. UK's #1 children's creative franchise. Can operate from home.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 10 – 20 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Education" data-origin="International" data-invest-tier="starter" data-name="Red School House">
+        <div class="bfc-top"><div class="bfc-name">Red School House</div><span class="bfc-origin">🌐 International</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Education</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">International pre-school and early childhood education centre. Holistic curriculum with strong parental demand.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 15 – 30 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <!-- ── BUSINESS SERVICES ── -->
+      <div class="brand-full-card" data-cat="Business Services" data-origin="USA" data-invest-tier="growth" data-name="ActionCOACH">
+        <div class="bfc-top"><div class="bfc-name">ActionCOACH</div><span class="bfc-origin">🇺🇸 USA</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Business Coaching</span><span class="bfc-model">Practitioner / Master</span></div>
+        <p class="bfc-desc">World's #1 business coaching franchise with presence in 80+ countries. Service-based, high margins, recurring revenue.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 25 – 50 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Business Services" data-origin="Australia" data-invest-tier="established" data-name="Brian Tracy Solutions">
+        <div class="bfc-top"><div class="bfc-name">Brian Tracy Solutions</div><span class="bfc-origin">🇦🇺 Australia</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Training</span><span class="bfc-model">Master / AD</span></div>
+        <p class="bfc-desc">World-class sales and leadership training backed by global thought leader Brian Tracy. Strong corporate client base.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 50 Lacs+</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Business Services" data-origin="USA" data-invest-tier="starter" data-name="Network In Action">
+        <div class="bfc-top"><div class="bfc-name">Network In Action</div><span class="bfc-origin">🇺🇸 USA</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Business Networking</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Premium B2B networking franchise with recurring monthly membership revenue. Low overhead, high scalability.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 15 Lacs+</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Business Services" data-origin="Australia" data-invest-tier="growth" data-name="District32">
+        <div class="bfc-top"><div class="bfc-name">District32</div><span class="bfc-origin">🇦🇺 Australia</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Business Networking</span><span class="bfc-model">Unit / Master</span></div>
+        <p class="bfc-desc">Exclusive business networking community franchise. Members-only model with territory exclusivity and recurring revenue.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 25 Lacs+</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Business Services" data-origin="USA" data-invest-tier="starter" data-name="Mars Venus Coaching">
+        <div class="bfc-top"><div class="bfc-name">Mars Venus Coaching</div><span class="bfc-origin">🇺🇸 USA</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Life &amp; Relationship Coaching</span><span class="bfc-model">Practitioner</span></div>
+        <p class="bfc-desc">Relationship and life coaching brand based on the global bestseller. Entry-level investment with service-based model.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 5 Lacs+</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Business Services" data-origin="UK" data-invest-tier="premium" data-name="Sales Geek">
+        <div class="bfc-top"><div class="bfc-name">Sales Geek</div><span class="bfc-origin">🇬🇧 UK</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Business Services</span><span class="bfc-model">Practitioner / AD</span></div>
+        <p class="bfc-desc">Part-time Sales Director franchise. Provides SMEs access to senior sales expertise on a fractional basis.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 1.5 Crore+</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <!-- ── RETAIL & LIFESTYLE ── -->
+      <div class="brand-full-card" data-cat="Retail & Lifestyle" data-origin="France" data-invest-tier="growth" data-name="5aSec Laundry">
+        <div class="bfc-top"><div class="bfc-name">5àSec Laundry</div><span class="bfc-origin">🇫🇷 France</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Services</span><span class="bfc-model">Unit / AD / Master</span></div>
+        <p class="bfc-desc">Europe's largest dry cleaning and laundry chain with 1,700+ outlets across 30 countries. Strong recurring revenue.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 25 – 40 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <div class="brand-full-card" data-cat="Retail & Lifestyle" data-origin="International" data-invest-tier="growth" data-name="Sweet Factory">
+        <div class="bfc-top"><div class="bfc-name">Sweet Factory</div><span class="bfc-origin">🌐 International</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Retail</span><span class="bfc-model">Unit / AD</span></div>
+        <p class="bfc-desc">Specialty candy and confectionery retail. Interactive pick-and-mix concept with strong mall footfall and impulse buy rate.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 20 – 40 Lacs</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <!-- ── ENTERTAINMENT ── -->
+      <div class="brand-full-card" data-cat="Entertainment" data-origin="Australia" data-invest-tier="premium" data-name="Flip Out">
+        <div class="bfc-top"><div class="bfc-name">Flip Out</div><span class="bfc-origin">🇦🇺 Australia</span></div>
+        <div class="bfc-pills"><span class="bfc-cat">Entertainment</span><span class="bfc-model">Master / AD</span></div>
+        <p class="bfc-desc">Indoor trampoline and adventure park. High-footfall family entertainment concept with birthday party revenue streams.</p>
+        <div class="bfc-footer"><span class="bfc-invest">💰 INR 1 Crore+</span><a href="index.html#contact" class="bfc-enquire">Enquire →</a></div>
+      </div>
+
+      <!-- No results message -->
+      <div class="no-results" id="noResults">
+        <h3>No brands match your filters</h3>
+        <p>Try adjusting your search or filters, or <a href="index.html#contact" style="color:var(--primary);">contact us</a> to discuss your specific requirements.</p>
+      </div>
+
+    </div><!-- /brands-grid -->
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="container">
+    <h2>Can't Find the Right Fit?</h2>
+    <p>We have brands that aren't listed publicly. Tell us your goals and we'll match you to the perfect opportunity.</p>
+    <div class="cta-buttons">
+      <a href="index.html#contact" class="btn btn-white">Talk to an Advisor →</a>
+      <a href="https://wa.me/919999999999?text=Hi%2C+I%27m+looking+at+the+brand+catalogue+on+BusinessIQ+and+need+help+finding+a+match." class="btn btn-white-outline" target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.08);">
+      <a href="index.html" class="nav-logo" style="color:#fff;">
+        <div class="logo-icon">B</div>Business<span>IQ</span>
+      </a>
+      <nav style="display:flex;gap:2rem;flex-wrap:wrap;" aria-label="Footer links">
+        <a href="index.html" style="color:rgba(255,255,255,0.6);font-size:0.88rem;">Home</a>
+        <a href="brands.html" style="color:var(--accent);font-size:0.88rem;">Brands</a>
+        <a href="index.html#contact" style="color:rgba(255,255,255,0.6);font-size:0.88rem;">Contact</a>
+        <a href="privacy.html" style="color:rgba(255,255,255,0.6);font-size:0.88rem;">Privacy</a>
+        <a href="terms.html" style="color:rgba(255,255,255,0.6);font-size:0.88rem;">Terms</a>
+        <a href="disclaimer.html" style="color:rgba(255,255,255,0.6);font-size:0.88rem;">Disclaimer</a>
+      </nav>
+    </div>
+    <div style="padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);">&copy; 2026 BusinessIQ.co.in. All Rights Reserved. &nbsp;|&nbsp; Authorized IFC of <strong style="color:rgba(255,255,255,0.7);">Franchise India Consultants Pvt. Ltd.</strong></p>
+      <p style="font-size:0.78rem;color:rgba(255,255,255,0.35);">Franchise brand names and trademarks are property of their respective owners.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<div class="wa-float">
+  <a href="https://wa.me/919999999999?text=Hi%2C+I%27m+browsing+the+brand+catalogue+on+BusinessIQ.+Can+you+help+me+find+the+right+franchise?" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" fill="white" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+  // Navbar
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  // Back to top
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 400));
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Filters
+  const cards = document.querySelectorAll('.brand-full-card');
+  const noResults = document.getElementById('noResults');
+  const countEl = document.getElementById('resultCount');
+
+  const budgetRanges = {
+    starter:     card => card.dataset.investTier === 'starter',
+    growth:      card => card.dataset.investTier === 'growth',
+    established: card => card.dataset.investTier === 'established',
+    premium:     card => card.dataset.investTier === 'premium',
+  };
+
+  function applyFilters() {
+    const search  = document.getElementById('searchBrand').value.toLowerCase().trim();
+    const cat     = document.getElementById('filterCat').value;
+    const budget  = document.getElementById('filterBudget').value;
+    const origin  = document.getElementById('filterOrigin').value;
+
+    let visible = 0;
+    cards.forEach(card => {
+      const nameMatch   = !search || card.dataset.name.toLowerCase().includes(search) || card.dataset.cat.toLowerCase().includes(search);
+      const catMatch    = !cat    || card.dataset.cat.toLowerCase().includes(cat.toLowerCase().replace('&amp;','&').toLowerCase());
+      const budgetMatch = !budget || (budgetRanges[budget] && budgetRanges[budget](card));
+      const origMatch   = !origin || card.dataset.origin.toLowerCase().includes(origin.toLowerCase());
+
+      const show = nameMatch && catMatch && budgetMatch && origMatch;
+      card.dataset.hidden = show ? 'false' : 'true';
+      if (show) visible++;
+    });
+
+    countEl.textContent = visible;
+    noResults.classList.toggle('visible', visible === 0);
+  }
+
+  document.getElementById('searchBrand').addEventListener('input', applyFilters);
+  document.getElementById('filterCat').addEventListener('change', applyFilters);
+  document.getElementById('filterBudget').addEventListener('change', applyFilters);
+  document.getElementById('filterOrigin').addEventListener('change', applyFilters);
+
+  // Fade-in
+  const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

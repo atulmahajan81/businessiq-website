@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="440" viewBox="0 0 400 440" role="img">
+  <title>BusinessIQ — Navigate Your Success</title>
+  <desc>Compass rose logo for BusinessIQ.co.in, India's premier franchise consultancy. Gold north point symbolising direction and ambition.</desc>
+
+  <!-- ══ Outer decorative rings ══ -->
+  <circle cx="200" cy="195" r="148" fill="none" stroke="#1a3c6e" stroke-width="2" opacity="0.1"/>
+  <circle cx="200" cy="195" r="116" fill="none" stroke="#1a3c6e" stroke-width="1.5" opacity="0.08"/>
+
+  <!-- ══ Cardinal tick marks ══ -->
+  <line x1="200" y1="47" x2="200" y2="65"  stroke="#1a3c6e" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <line x1="200" y1="325" x2="200" y2="343" stroke="#1a3c6e" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <line x1="52"  y1="195" x2="70"  y2="195" stroke="#1a3c6e" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+  <line x1="330" y1="195" x2="348" y2="195" stroke="#1a3c6e" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- ══ Inter-cardinal ticks ══ -->
+  <line x1="95"  y1="90"  x2="107" y2="102" stroke="#1a3c6e" stroke-width="1.5" stroke-linecap="round" opacity="0.15"/>
+  <line x1="305" y1="90"  x2="293" y2="102" stroke="#1a3c6e" stroke-width="1.5" stroke-linecap="round" opacity="0.15"/>
+  <line x1="95"  y1="300" x2="107" y2="288" stroke="#1a3c6e" stroke-width="1.5" stroke-linecap="round" opacity="0.15"/>
+  <line x1="305" y1="300" x2="293" y2="288" stroke="#1a3c6e" stroke-width="1.5" stroke-linecap="round" opacity="0.15"/>
+
+  <!-- ══ NORTH needle — gold, dominant ══ -->
+  <polygon points="200,55 213,160 200,188 187,160" fill="#e8a020"/>
+
+  <!-- ══ SOUTH needle — navy, recessed ══ -->
+  <polygon points="200,335 213,230 200,202 187,230" fill="#1a3c6e" opacity="0.35"/>
+
+  <!-- ══ EAST needle ══ -->
+  <polygon points="345,195 240,182 212,195 240,208" fill="#1a3c6e" opacity="0.45"/>
+
+  <!-- ══ WEST needle ══ -->
+  <polygon points="55,195 160,182 188,195 160,208" fill="#1a3c6e" opacity="0.45"/>
+
+  <!-- ══ Centre jewel ══ -->
+  <circle cx="200" cy="195" r="22" fill="#fff" stroke="#1a3c6e" stroke-width="2"/>
+  <circle cx="200" cy="195" r="12" fill="#e8a020"/>
+  <circle cx="200" cy="195" r="5"  fill="#1a3c6e"/>
+
+  <!-- ══ Cardinal letters ══ -->
+  <text x="200" y="42"  text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#e8a020" letter-spacing="1">N</text>
+  <text x="200" y="362" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1a3c6e" opacity="0.35">S</text>
+  <text x="368" y="201" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1a3c6e" opacity="0.35">E</text>
+  <text x="32"  y="201" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1a3c6e" opacity="0.35">W</text>
+
+  <!-- ══ Wordmark ══ -->
+  <text x="200" y="404" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900" fill="#1a3c6e" letter-spacing="1">BusinessIQ</text>
+
+  <!-- ══ Tagline ══ -->
+  <text x="200" y="428" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="500" fill="#e8a020" letter-spacing="5">NAVIGATE YOUR FRANCHISE BUSINESS</text>
+</svg>
