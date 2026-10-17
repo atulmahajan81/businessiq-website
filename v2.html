@@ -131,26 +131,20 @@
       position: sticky;
       top: 0;
       z-index: 1002;
-      height: var(--ifc-h);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: var(--g-primary);
       color: rgba(255,255,255,0.82);
       font-size: clamp(0.68rem, 0.9vw + 0.3rem, 0.78rem);
       font-weight: 500;
-      padding: 0 clamp(12px, 3vw, 32px);
+      padding: 6px clamp(12px, 3vw, 32px);
       letter-spacing: 0.025em;
       text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 1.4;
     }
     .ifc-bar strong { color: var(--accent-lt); }
     .ifc-bar b { color: #fff; }
     .ifc-bar .ifc-short { display: none; }
     @media (max-width: 600px) {
-      :root { --ifc-h: 32px; }
+      .ifc-bar { font-size: 0.72rem; padding: 5px 0.75rem; }
       .ifc-bar .ifc-long { display: none; }
       .ifc-bar .ifc-short { display: inline; }
     }
@@ -1201,7 +1195,7 @@
 <!-- IFC Disclosure Bar -->
 <div class="ifc-bar">
   <span class="ifc-long">BusinessIQ is an <strong>Authorized Independent Franchise Consultant (IFC)</strong> of <b>Franchise India Consultants Pvt. Ltd.</b> &nbsp;·&nbsp; All leads &amp; enquiries are processed through Franchise India.</span>
-  <span class="ifc-short"><strong>Authorized IFC</strong> · All enquiries via Franchise India Consultants Pvt. Ltd.</span>
+  <span class="ifc-short"><strong>Authorized IFC</strong> · Franchise India Consultants Pvt. Ltd.</span>
 </div>
 
 <!-- Navigation -->
@@ -1687,6 +1681,15 @@
     tBtn.textContent = next === 'dark' ? '☀️' : '🌙';
     localStorage.setItem('biq2-theme', next);
   });
+
+  /* ── IFC BAR HEIGHT → CSS VAR ── */
+  const ifcBar = document.querySelector('.ifc-bar');
+  const setIfcH = () => {
+    const h = ifcBar ? ifcBar.getBoundingClientRect().height : 36;
+    document.documentElement.style.setProperty('--ifc-h', h + 'px');
+  };
+  setIfcH();
+  window.addEventListener('resize', setIfcH);
 
   /* ── NAV SCROLL ── */
   const nav = document.getElementById('nav');

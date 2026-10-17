@@ -112,21 +112,18 @@ section { padding: 5rem 0; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1002;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #1a3c6e;
   color: rgba(255,255,255,0.85);
   font-size: 0.78rem;
-  padding: 0 1rem;
+  padding: 6px 1rem;
   letter-spacing: 0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 1.4;
 }
+.navbar { top: 32px; }
 .ifc-bar .ifc-short { display: none; }
 @media (max-width: 600px) {
+  .ifc-bar { font-size: 0.72rem; padding: 5px 0.75rem; }
   .ifc-bar .ifc-long { display: none; }
   .ifc-bar .ifc-short { display: inline; }
 }
