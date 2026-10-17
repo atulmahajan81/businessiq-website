@@ -15,7 +15,7 @@
        RESET
     ========================================== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-padding-top: calc(var(--ifc-h, 36px) + var(--nav-h, 72px)); }
 
     /* ==========================================
        DESIGN TOKENS
@@ -63,6 +63,7 @@
 
       --ifc-h:  36px;
       --nav-h:  72px;
+      --scroll-offset: calc(var(--ifc-h) + var(--nav-h));
       --max-w:  1440px;
     }
 
@@ -141,9 +142,18 @@
       padding: 0 clamp(12px, 3vw, 32px);
       letter-spacing: 0.025em;
       text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .ifc-bar strong { color: var(--accent-lt); }
     .ifc-bar b { color: #fff; }
+    .ifc-bar .ifc-short { display: none; }
+    @media (max-width: 600px) {
+      :root { --ifc-h: 32px; }
+      .ifc-bar .ifc-long { display: none; }
+      .ifc-bar .ifc-short { display: inline; }
+    }
 
     /* ==========================================
        NAVIGATION
@@ -1190,7 +1200,8 @@
 
 <!-- IFC Disclosure Bar -->
 <div class="ifc-bar">
-  BusinessIQ is an <strong>Authorized Independent Franchise Consultant (IFC)</strong> of <b>Franchise India Consultants Pvt. Ltd.</b> &nbsp;·&nbsp; All leads &amp; enquiries are processed through Franchise India.
+  <span class="ifc-long">BusinessIQ is an <strong>Authorized Independent Franchise Consultant (IFC)</strong> of <b>Franchise India Consultants Pvt. Ltd.</b> &nbsp;·&nbsp; All leads &amp; enquiries are processed through Franchise India.</span>
+  <span class="ifc-short"><strong>Authorized IFC</strong> · All enquiries via Franchise India Consultants Pvt. Ltd.</span>
 </div>
 
 <!-- Navigation -->

@@ -24,7 +24,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 104px; }
 
 body {
   font-family: var(--font);
@@ -121,6 +121,14 @@ section { padding: 5rem 0; }
   font-size: 0.78rem;
   padding: 0 1rem;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ifc-bar .ifc-short { display: none; }
+@media (max-width: 600px) {
+  .ifc-bar .ifc-long { display: none; }
+  .ifc-bar .ifc-short { display: inline; }
 }
 .navbar {
   position: fixed;
@@ -203,7 +211,7 @@ section { padding: 5rem 0; }
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 72px;
+  padding-top: 104px;
 }
 .hero::before {
   content: '';
@@ -897,7 +905,7 @@ footer {
   .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .hero-cta { flex-direction: column; width: fit-content; }
+  .hero-cta { flex-direction: column; width: 100%; max-width: 320px; }
   .hero-stats { gap: 1.5rem; }
   .steps { flex-direction: column; align-items: center; gap: 1rem; }
   .step::after { display: none; }
