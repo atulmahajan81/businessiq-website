@@ -71,14 +71,39 @@ if (contactForm) {
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = contactForm.querySelector('.btn-submit');
+    const origText = btn.textContent;
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    // Simulate async submit — replace with actual API call
-    await new Promise(r => setTimeout(r, 1500));
-
-    contactForm.style.display = 'none';
-    formSuccess.style.display = 'block';
+    const data = new FormData(contactForm);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'cf13f6e3-deb6-4752-9d4a-3966fba822e5',
+          subject: 'New Franchise Consultation Request — BusinessIQ',
+          from_name: 'BusinessIQ Website',
+          name: (data.get('firstName') || '') + ' ' + (data.get('lastName') || ''),
+          email: data.get('email'),
+          phone: data.get('phone'),
+          city: data.get('city'),
+          budget: data.get('investmentBudget') || data.get('budget') || '',
+          message: data.get('message') || 'No message provided'
+        })
+      });
+      const result = await res.json();
+      if (result.success) {
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      btn.textContent = origText;
+      btn.disabled = false;
+      alert('Sorry, something went wrong. Please WhatsApp us or email info@businessiq.co.in');
+    }
   });
 }
 

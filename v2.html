@@ -1771,12 +1771,41 @@
   /* ── CONTACT FORM ── */
   document.getElementById('cForm').addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const origText = btn.textContent;
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    await new Promise(r => setTimeout(r, 1300));
-    e.target.style.display = 'none';
-    document.getElementById('fSuccess').style.display = 'block';
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'cf13f6e3-deb6-4752-9d4a-3966fba822e5',
+          subject: 'New Franchise Consultation Request — BusinessIQ',
+          from_name: 'BusinessIQ Website',
+          name: (data.get('firstName') || '') + ' ' + (data.get('lastName') || ''),
+          email: data.get('email'),
+          phone: data.get('phone'),
+          city: data.get('city'),
+          budget: data.get('budget'),
+          message: data.get('message') || 'No message provided'
+        })
+      });
+      const result = await res.json();
+      if (result.success) {
+        form.style.display = 'none';
+        document.getElementById('fSuccess').style.display = 'block';
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      btn.textContent = origText;
+      btn.disabled = false;
+      alert('Sorry, something went wrong. Please try WhatsApp or email us directly.');
+    }
   });
 
   /* ── NEWSLETTER ── */
