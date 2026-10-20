@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f2549"/>
+      <stop offset="100%" style="stop-color:#1a3c6e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e8a020"/>
+      <stop offset="100%" style="stop-color:#f5c347"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="120" r="220" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="80"/>
+  <circle cx="1050" cy="120" r="340" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="60"/>
+  <circle cx="150" cy="530" r="180" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="60"/>
+
+  <!-- Accent bar -->
+  <rect x="80" y="195" width="6" height="80" fill="url(#accent)" rx="3"/>
+
+  <!-- Logo text -->
+  <text x="100" y="140" font-family="'Segoe UI', Arial, sans-serif" font-size="52" font-weight="900" fill="#ffffff">Business<tspan fill="#e8a020">IQ</tspan></text>
+  <text x="100" y="178" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.55)" letter-spacing="3">BUSINESSIQ.CO.IN</text>
+
+  <!-- Main headline -->
+  <text x="100" y="265" font-family="'Segoe UI', Arial, sans-serif" font-size="56" font-weight="800" fill="#ffffff">Franchise Opportunities</text>
+  <text x="100" y="335" font-family="'Segoe UI', Arial, sans-serif" font-size="56" font-weight="800" fill="#ffffff">in <tspan fill="#e8a020">India</tspan> — 2026</text>
+
+  <!-- Subtitle -->
+  <text x="100" y="390" font-family="'Segoe UI', Arial, sans-serif" font-size="26" fill="rgba(255,255,255,0.70)">50+ International Brands · ₹5L to ₹2Cr+ · Free Consultation</text>
+
+  <!-- Tag pills -->
+  <rect x="100" y="430" width="190" height="44" rx="22" fill="rgba(232,160,32,0.18)" stroke="rgba(232,160,32,0.5)" stroke-width="1.5"/>
+  <text x="195" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#e8a020" text-anchor="middle">Food &amp; Beverage</text>
+
+  <rect x="305" y="430" width="160" height="44" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="385" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.85)" text-anchor="middle">Education</text>
+
+  <rect x="480" y="430" width="200" height="44" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="580" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.85)" text-anchor="middle">Health &amp; Wellness</text>
+
+  <rect x="695" y="430" width="180" height="44" rx="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <text x="785" y="458" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.85)" text-anchor="middle">Retail &amp; More</text>
+
+  <!-- Bottom CTA -->
+  <text x="100" y="560" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.45)">Authorized IFC of Franchise India Consultants Pvt. Ltd.</text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="618" width="1200" height="12" fill="url(#accent)"/>
+</svg>
