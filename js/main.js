@@ -28,17 +28,6 @@ window.addEventListener('scroll', () => {
 });
 backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// ── Cookie banner ──
-const cookieBanner = document.getElementById('cookieBanner');
-const cookieKey = 'biq_cookie_accepted';
-if (!localStorage.getItem(cookieKey)) {
-  cookieBanner.classList.remove('hidden');
-}
-document.getElementById('acceptCookies').addEventListener('click', () => {
-  localStorage.setItem(cookieKey, '1');
-  cookieBanner.classList.add('hidden');
-});
-
 // ── Fade-in on scroll ──
 const observer = new IntersectionObserver(
   entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
