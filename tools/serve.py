@@ -33,12 +33,19 @@ class PagesHandler(SimpleHTTPRequestHandler):
             self.end_headers()
             return None
 
-        if path not in ("/", "") and not os.path.splitext(path)[1]:
+        if path not in ("/", "") and not path.endswith("/") and not os.path.splitext(path)[1]:
             rel = path.strip("/")
-            for candidate in (rel + ".html", rel + "/index.html"):
-                if os.path.isfile(candidate):
-                    self.path = "/" + candidate
-                    break
+            if os.path.isfile(rel + ".html"):
+                self.path = "/" + rel + ".html"
+            elif os.path.isdir(rel):
+                # Pages redirects a bare directory to its trailing-slash form
+                # rather than serving index.html in place. Reproducing that is
+                # the whole point of this server: a canonical pointing at the
+                # slashless form would silently point at a redirect.
+                self.send_response(308)
+                self.send_header("Location", path + "/")
+                self.end_headers()
+                return None
 
         return super().send_head()
 
