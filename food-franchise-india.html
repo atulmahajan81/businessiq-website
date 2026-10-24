@@ -96,37 +96,6 @@
   </script>
 
   <style>
-    .cat-hero {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      color: #fff;
-      padding: calc(var(--ifc-offset, 104px) + 3rem) 0 3.5rem;
-      text-align: center;
-    }
-    .cat-hero h1 { color: #fff; margin-bottom: 0.75rem; }
-    .cat-hero h1 span { color: var(--accent); }
-    .cat-hero p { color: rgba(255,255,255,0.78); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
-    .cat-hero .tag { background: rgba(232,160,32,0.2); color: var(--accent); }
-
-    .breadcrumb { background: var(--bg-light); padding: 0.85rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-    .breadcrumb a { color: var(--primary); text-decoration: none; font-weight: 600; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb span { color: var(--text-muted); }
-
-    .cat-body { padding: 3.5rem 0; }
-    .prose { max-width: 820px; margin: 0 auto 3rem; }
-    .prose h2 { margin: 2.25rem 0 0.9rem; }
-    .prose h3 { margin: 1.75rem 0 0.6rem; color: var(--primary); font-size: 1.15rem; }
-    .prose p { color: var(--text-muted); line-height: 1.8; margin-bottom: 0.9rem; }
-    .prose ul { margin: 0 0 1rem 1.3rem; color: var(--text-muted); line-height: 1.9; }
-    .prose strong { color: var(--text); }
-
-    .tier-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 2rem; font-size: 0.92rem; }
-    .tier-table th, .tier-table td { padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-    .tier-table th { background: var(--bg-light); color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .tier-table td { color: var(--text-muted); }
-    .tier-table tr:hover td { background: var(--bg-light); }
-    .tier-table td strong { color: var(--text); }
-
     .bgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
     .bcard {
       background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
@@ -141,19 +110,7 @@
     .bcard-foot { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; padding-top: 0.6rem; border-top: 1px solid var(--border); }
     .bcard-inv { font-size: 0.82rem; font-weight: 700; color: var(--accent-dark); }
     .bcard-model { font-size: 0.7rem; color: var(--text-muted); }
-
-    .cat-cta { background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; max-width: 820px; margin: 3rem auto 0; }
-    .cat-cta h2 { margin-bottom: 0.6rem; }
-    .cat-cta p { color: var(--text-muted); margin-bottom: 1.5rem; }
-    .cat-cta .btn + .btn { margin-left: 0.75rem; }
-
-    @media (max-width: 600px) {
-      .tier-table { font-size: 0.82rem; }
-      .tier-table th, .tier-table td { padding: 0.6rem 0.5rem; }
-      .cat-cta { padding: 1.75rem 1.25rem; }
-      .cat-cta .btn + .btn { margin-left: 0; margin-top: 0.75rem; }
-      .cat-cta .btn { width: 100%; justify-content: center; }
-    }
+    .prose-lead { margin-bottom: 3rem; }
   </style>
 </head>
 <body>
@@ -175,6 +132,7 @@
         <li><a href="brands">Brands</a></li>
         <li><a href="/#why-us">Why Us</a></li>
         <li><a href="/#investment">Investment</a></li>
+        <li><a href="/learn">Learn</a></li>
         <li><a href="/#faq">FAQ</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
@@ -186,7 +144,7 @@
   </div>
 </nav>
 
-<header class="cat-hero">
+<header class="page-hero">
   <div class="container">
     <span class="tag">🍽️ Food &amp; Beverage Franchises</span>
     <h1>Food Franchise <span>in India</span></h1>
@@ -200,17 +158,18 @@
   </div>
 </nav>
 
-<main class="cat-body">
+<main class="page-body">
   <div class="container">
 
-    <article class="prose">
+    <article class="prose prose-lead">
       <p>Food and beverage is the largest franchise category in India, and the one where international brands have found the fastest traction. Rising disposable income in metros and Tier-2 cities, combined with a young population that eats out frequently, has made F&amp;B the default entry point for first-time franchise investors.</p>
       <p>BusinessIQ, an Authorized Independent Franchise Consultant of Franchise India, currently represents <strong>21 international food and beverage brands</strong> across coffee, tea, pizza, QSR, bakery and dessert formats — with investment levels from <strong>₹15 Lakhs to ₹80 Lakhs</strong>.</p>
 
       <h2>Food franchise investment levels in India</h2>
+      <p>For a full breakdown of what makes up these figures, including the ongoing fees and working capital that sit outside setup cost, see our <a href="/learn/franchise-cost-in-india">guide to franchise costs in India</a>.</p>
       <p>Investment figures below are indicative total setup costs — franchise fee, interiors, equipment and initial working capital. They vary with city, site size and local rentals.</p>
 
-      <table class="tier-table">
+      <table class="data-table">
         <thead>
           <tr><th>Investment</th><th>Format</th><th>Typical space</th><th>Example brands</th></tr>
         </thead>
@@ -300,7 +259,7 @@
       </details>
     </section>
 
-    <div class="cat-cta">
+    <div class="page-cta">
       <h2>Find the right food franchise for your city</h2>
       <p>Tell us your budget and location, and we'll shortlist the brands that actually fit — free, with no obligation.</p>
       <a href="/#contact" class="btn btn-primary">Book Free Consultation →</a>

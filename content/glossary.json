@@ -1,0 +1,363 @@
+{
+  "title": "Franchise Glossary",
+  "intro": "Franchising has its own vocabulary, and most of it turns up for the first time in a contract or a cost sheet, which is a bad moment to meet a new word. These are the terms that come up most often when investors across India evaluate a franchise, written in plain English.",
+  "terms": [
+    {
+      "term": "Advertising Fund",
+      "slug": "advertising-fund",
+      "category": "Money & Economics",
+      "definition": "A shared marketing pool that franchisees pay into, usually 1-3% of gross sales, separate from the royalty. The franchisor spends it on brand-level advertising rather than on any single outlet. Ask how the fund is governed, whether the franchisor contributes to it, and whether you also carry a separate obligation to spend on local marketing for your own outlet.",
+      "seeAlso": ["royalty-fee", "franchise-fee"]
+    },
+    {
+      "term": "Area Developer",
+      "slug": "area-developer",
+      "category": "Franchise Models",
+      "definition": "A franchisee who commits to opening an agreed number of outlets inside a defined territory, to a fixed schedule. You operate the outlets yourself rather than sub-franchising them. It costs more than a single unit and carries a development obligation: miss the schedule and you can lose exclusivity for the territory.",
+      "seeAlso": ["master-franchise", "unit-franchise", "multi-unit-franchise"]
+    },
+    {
+      "term": "Average Unit Volume (AUV)",
+      "slug": "average-unit-volume",
+      "category": "Money & Economics",
+      "definition": "The average annual revenue of a single outlet across a brand's network. Useful for sizing expectations, but treat a headline AUV carefully: it blends flagship locations with weak ones, and averages from other countries rarely transfer to India. Ask for the range and the median, not just the average.",
+      "seeAlso": ["same-store-sales", "unit-economics"]
+    },
+    {
+      "term": "Break-Even Point",
+      "slug": "break-even-point",
+      "category": "Money & Economics",
+      "definition": "The monthly revenue at which an outlet covers all its costs and stops losing money. It is not the same as recovering your investment. Reaching break-even means you are no longer burning cash each month; getting your capital back is the payback period, which comes considerably later.",
+      "seeAlso": ["payback-period", "working-capital", "unit-economics"]
+    },
+    {
+      "term": "Capital Expenditure (CapEx)",
+      "slug": "capital-expenditure",
+      "category": "Money & Economics",
+      "definition": "One-time spend on physical assets needed to open: interiors, kitchen or retail equipment, furniture, signage and IT. Distinct from the franchise fee and from working capital. CapEx estimates quoted by a brand often assume a standard site, so a space needing structural work can push the real figure well above the brochure number.",
+      "seeAlso": ["fit-out", "working-capital", "turnkey"]
+    },
+    {
+      "term": "Catchment Area",
+      "slug": "catchment-area",
+      "category": "Operations",
+      "definition": "The geographic area an outlet realistically draws customers from, and the population and income profile inside it. For a mall kiosk this may be a few hundred metres; for a destination restaurant, several kilometres. Catchment quality drives revenue more than almost any other single factor, which is why brands insist on approving sites.",
+      "seeAlso": ["footfall", "site-approval", "territory-rights"]
+    },
+    {
+      "term": "Conversion Franchise",
+      "slug": "conversion-franchise",
+      "category": "Franchise Models",
+      "definition": "An arrangement where an existing independent business rebrands and joins a franchise network, keeping its premises and often its staff. Common in services, salons and hospitality. It can shorten the path to opening, but the brand will usually require refurbishment to its standards and full adoption of its systems.",
+      "seeAlso": ["unit-franchise", "standard-operating-procedure"]
+    },
+    {
+      "term": "Conversion Rate",
+      "slug": "conversion-rate",
+      "category": "Operations",
+      "definition": "The share of people passing or entering who actually buy. Together with footfall and average transaction value, it determines outlet revenue. A location with modest footfall and strong conversion frequently outperforms a busy site where most passers-by never stop.",
+      "seeAlso": ["footfall", "catchment-area", "unit-economics"]
+    },
+    {
+      "term": "Cost of Goods Sold (COGS)",
+      "slug": "cost-of-goods-sold",
+      "category": "Money & Economics",
+      "definition": "The direct cost of what you sell, such as ingredients, raw materials or stock, excluding rent and salaries. Usually expressed as a percentage of sales. In franchising, COGS is partly outside your control, because brands often require you to buy specified items through approved suppliers.",
+      "seeAlso": ["gross-margin", "supply-chain", "unit-economics"]
+    },
+    {
+      "term": "Discovery Day",
+      "slug": "discovery-day",
+      "category": "Process & People",
+      "definition": "A structured visit where a prospective franchisee meets the franchisor's team, sees operations first-hand and asks questions before committing. Treat it as due diligence in both directions: the brand is assessing you as well. Come with questions about unit economics and franchisee turnover, not just the product.",
+      "seeAlso": ["due-diligence", "franchisor", "letter-of-intent"]
+    },
+    {
+      "term": "Due Diligence",
+      "slug": "due-diligence",
+      "category": "Process & People",
+      "definition": "The investigation you carry out before signing: verifying the franchisor's financials and litigation history, reading the agreement with a lawyer, modelling the unit economics yourself, and, most revealing of all, speaking to current and former franchisees without the brand present.",
+      "seeAlso": ["franchise-disclosure-document", "franchise-agreement", "discovery-day"]
+    },
+    {
+      "term": "EBITDA",
+      "slug": "ebitda",
+      "category": "Money & Economics",
+      "definition": "Earnings before interest, tax, depreciation and amortisation, a measure of operating profitability before financing and accounting effects. Useful for comparing outlets, but it deliberately excludes real costs. An outlet with healthy EBITDA can still be a poor investment once loan repayments and equipment replacement are counted.",
+      "seeAlso": ["gross-margin", "unit-economics", "return-on-investment"]
+    },
+    {
+      "term": "Exclusivity Clause",
+      "slug": "exclusivity-clause",
+      "category": "Legal & Agreements",
+      "definition": "The contractual promise that the franchisor will not open, or license someone else to open, a competing outlet inside your territory. Read it closely: exclusivity is often narrower than it first appears, and may carve out malls, airports, institutional sites or the brand's own online and delivery channels.",
+      "seeAlso": ["territory-rights", "franchise-agreement", "area-developer"]
+    },
+    {
+      "term": "FDI in Retail",
+      "slug": "fdi-in-retail",
+      "category": "India Compliance",
+      "definition": "Foreign Direct Investment rules governing overseas ownership in Indian retail. The permitted share and approval route differ between single-brand and multi-brand retail, and conditions such as local sourcing can apply. The policy has been revised several times, so confirm the current position with a professional advisor before structuring any deal.",
+      "seeAlso": ["master-franchise", "franchisor"]
+    },
+    {
+      "term": "FSSAI Licence",
+      "slug": "fssai-licence",
+      "category": "India Compliance",
+      "definition": "Mandatory registration or licence from the Food Safety and Standards Authority of India for any business handling food. It operates in tiers, namely basic registration, state licence and central licence, determined by turnover and scale of operations. Thresholds are revised periodically, so verify which tier applies to you before applying.",
+      "seeAlso": ["trade-licence", "shop-and-establishment-registration"]
+    },
+    {
+      "term": "Fit-Out",
+      "slug": "fit-out",
+      "category": "Operations",
+      "definition": "Converting a bare shell into a finished, brand-compliant outlet: flooring, ceiling, lighting, furniture, counters, signage and services. Usually the largest single line in CapEx. Franchisors normally specify the design and may require approved vendors, which raises quality and consistency but limits how far you can cut cost.",
+      "seeAlso": ["capital-expenditure", "turnkey", "soft-launch"]
+    },
+    {
+      "term": "Footfall",
+      "slug": "footfall",
+      "category": "Operations",
+      "definition": "The number of people passing or entering a location in a given period. High footfall alone does not guarantee sales: a transit hub produces volume but hurried customers, while a neighbourhood high street produces fewer but higher-value visits. What matters is footfall that matches the brand's customer.",
+      "seeAlso": ["catchment-area", "site-approval", "conversion-rate"]
+    },
+    {
+      "term": "Franchise Agreement",
+      "slug": "franchise-agreement",
+      "category": "Legal & Agreements",
+      "definition": "The binding contract between franchisor and franchisee, setting out the term, territory, fees, operating obligations, renewal, transfer and termination. India has no franchise-specific statute, so this document governs almost everything about the relationship. Have it reviewed by a lawyer experienced in franchising before you sign.",
+      "seeAlso": ["franchise-disclosure-document", "term-and-renewal", "termination-clause"]
+    },
+    {
+      "term": "Franchise Broker",
+      "slug": "franchise-broker",
+      "category": "Process & People",
+      "definition": "An intermediary who introduces investors to franchise brands, typically paid a commission by the franchisor when a deal closes. Brokers can widen the set of options you see, but the commission structure means incentives are not automatically aligned with yours. Ask directly how any adviser is paid.",
+      "seeAlso": ["independent-franchise-consultant", "franchisor"]
+    },
+    {
+      "term": "Franchise Disclosure Document (FDD)",
+      "slug": "franchise-disclosure-document",
+      "category": "Legal & Agreements",
+      "definition": "A document in which the franchisor discloses its business history, litigation, fees, obligations and franchisee performance data. Disclosure is legally mandated in some countries, notably the United States. India has no equivalent statutory requirement, so an FDD here is voluntary. If a brand offers one, read it closely; if it does not, ask why.",
+      "seeAlso": ["franchise-agreement", "due-diligence", "franchisor"]
+    },
+    {
+      "term": "Franchise Fee",
+      "slug": "franchise-fee",
+      "category": "Money & Economics",
+      "definition": "The one-time, up-front amount paid to the franchisor for the right to operate under the brand, typically covering initial training, the operations manual and launch support. It is only a fraction of total setup cost: fit-out, equipment, deposits and working capital usually add up to considerably more.",
+      "seeAlso": ["royalty-fee", "capital-expenditure", "working-capital"]
+    },
+    {
+      "term": "Franchisee",
+      "slug": "franchisee",
+      "category": "Process & People",
+      "definition": "The person or company that buys the right to operate a business under an established brand, following its systems in exchange for fees. You own the outlet and carry its commercial risk, but you do not own the brand and you operate within rules set by the franchisor.",
+      "seeAlso": ["franchisor", "franchise-agreement", "unit-franchise"]
+    },
+    {
+      "term": "Franchisor",
+      "slug": "franchisor",
+      "category": "Process & People",
+      "definition": "The company that owns the brand, the business system and the intellectual property, and licenses them to franchisees. Its obligations, including training, supply, marketing and ongoing support, are defined by the franchise agreement rather than by custom, so check what is actually promised in writing.",
+      "seeAlso": ["franchisee", "franchise-agreement", "intellectual-property-licence"]
+    },
+    {
+      "term": "GST Registration",
+      "slug": "gst-registration",
+      "category": "India Compliance",
+      "definition": "Registration under India's Goods and Services Tax, required once turnover crosses the prescribed threshold, which differs for goods and services and for certain states. Registration is also mandatory in some situations regardless of turnover. Thresholds and rules change, so confirm the current position with a chartered accountant.",
+      "seeAlso": ["trade-licence", "shop-and-establishment-registration"]
+    },
+    {
+      "term": "Gross Margin",
+      "slug": "gross-margin",
+      "category": "Money & Economics",
+      "definition": "Revenue minus the direct cost of goods sold, as a percentage of revenue. Beverage-led formats typically carry higher gross margins than food-led ones because ingredient cost per unit is low. High gross margin does not guarantee profit, since rent and staffing still have to be covered out of it.",
+      "seeAlso": ["cost-of-goods-sold", "ebitda", "unit-economics"]
+    },
+    {
+      "term": "Independent Franchise Consultant (IFC)",
+      "slug": "independent-franchise-consultant",
+      "category": "Process & People",
+      "definition": "An authorised advisor who helps investors identify, evaluate and acquire a franchise, working with a consulting network's brand portfolio. BusinessIQ is an Authorized IFC of Franchise India Consultants Pvt. Ltd. As with any intermediary, ask how the advisor is compensated so you can judge where their incentives sit.",
+      "seeAlso": ["franchise-broker", "investor-registration", "due-diligence"]
+    },
+    {
+      "term": "Intellectual Property Licence",
+      "slug": "intellectual-property-licence",
+      "category": "Legal & Agreements",
+      "definition": "The part of the agreement granting you permission to use the brand's trademarks, trade dress, recipes, software and know-how. It is a licence, not a transfer: the rights remain the franchisor's and normally end when the agreement does, which is why rebranding on exit can be costly.",
+      "seeAlso": ["franchise-agreement", "termination-clause", "franchisor"]
+    },
+    {
+      "term": "Investor Registration",
+      "slug": "investor-registration",
+      "category": "Process & People",
+      "definition": "Formally registering as an investor with a franchise consulting network, which unlocks detailed brand information, a dedicated account manager, market analysis and support through due diligence and negotiation. A consultation fee generally applies. Establish exactly what is included before paying.",
+      "seeAlso": ["independent-franchise-consultant", "due-diligence", "discovery-day"]
+    },
+    {
+      "term": "Letter of Intent (LOI)",
+      "slug": "letter-of-intent",
+      "category": "Legal & Agreements",
+      "definition": "A document recording that both sides intend to proceed, usually ahead of the full franchise agreement. Parts of an LOI, such as confidentiality, exclusivity and deposits, can be legally binding even when the commercial terms are not. Check which clauses bind you, and whether any deposit is refundable.",
+      "seeAlso": ["franchise-agreement", "due-diligence"]
+    },
+    {
+      "term": "Master Franchise",
+      "slug": "master-franchise",
+      "category": "Franchise Models",
+      "definition": "The right to develop a brand across a whole country or large region, including the right to appoint and support sub-franchisees and to take a share of their fees. The most capital-intensive model, and effectively a business in its own right: you take on franchisor responsibilities locally, not just outlet operations.",
+      "seeAlso": ["area-developer", "unit-franchise", "franchisor"]
+    },
+    {
+      "term": "MSME / Udyam Registration",
+      "slug": "msme-udyam-registration",
+      "category": "India Compliance",
+      "definition": "Registration of a micro, small or medium enterprise on the Government of India's Udyam portal. It is not mandatory to trade, but can support access to priority-sector lending, certain subsidies and government schemes. Eligibility is based on investment and turnover criteria that are periodically revised.",
+      "seeAlso": ["gst-registration", "trade-licence"]
+    },
+    {
+      "term": "Multi-Unit Franchise",
+      "slug": "multi-unit-franchise",
+      "category": "Franchise Models",
+      "definition": "Operating several outlets of the same brand without the territory development obligations of an area developer agreement. Units are typically added one at a time as capital and capability allow. Overheads can be shared across outlets, but management complexity rises sharply after the first two or three.",
+      "seeAlso": ["unit-franchise", "area-developer", "same-store-sales"]
+    },
+    {
+      "term": "Non-Compete Clause",
+      "slug": "non-compete-clause",
+      "category": "Legal & Agreements",
+      "definition": "A restriction on running a competing business, both during the agreement and for a period after it ends. Scope varies widely in duration, geography and how broadly competing is defined. Indian courts scrutinise post-termination restraints carefully, but do not rely on that: negotiate the wording before signing.",
+      "seeAlso": ["franchise-agreement", "termination-clause", "transfer-clause"]
+    },
+    {
+      "term": "Payback Period",
+      "slug": "payback-period",
+      "category": "Money & Economics",
+      "definition": "How long it takes for cumulative profit to return your original investment. A more honest measure of a franchise opportunity than monthly profit alone. When a brand quotes a payback period, ask whether it is based on actual outlets in India or on a projection, and what assumptions sit behind it.",
+      "seeAlso": ["break-even-point", "return-on-investment", "unit-economics"]
+    },
+    {
+      "term": "Return on Investment (ROI)",
+      "slug": "return-on-investment",
+      "category": "Money & Economics",
+      "definition": "Annual profit expressed as a percentage of the capital invested. Comparable across very different businesses, which makes it useful, but only when calculated on total capital deployed, including working capital and deposits, rather than on the franchise fee alone.",
+      "seeAlso": ["payback-period", "ebitda", "unit-economics"]
+    },
+    {
+      "term": "Royalty Fee",
+      "slug": "royalty-fee",
+      "category": "Money & Economics",
+      "definition": "A recurring fee paid to the franchisor, usually a percentage of gross sales and typically charged whether or not the outlet is profitable. Over a ten-year term, royalties almost always exceed the initial franchise fee, so they matter far more to long-run returns than the up-front number.",
+      "seeAlso": ["franchise-fee", "advertising-fund", "unit-economics"]
+    },
+    {
+      "term": "Same-Store Sales",
+      "slug": "same-store-sales",
+      "category": "Operations",
+      "definition": "The change in revenue at outlets open for at least a year, excluding new openings. One of the clearest health indicators for a franchise network: a brand can grow total revenue simply by opening outlets while its existing ones decline. Ask for same-store numbers, not just network growth.",
+      "seeAlso": ["average-unit-volume", "unit-economics"]
+    },
+    {
+      "term": "Shop and Establishment Registration",
+      "slug": "shop-and-establishment-registration",
+      "category": "India Compliance",
+      "definition": "State-level registration governing commercial premises, covering working hours, holidays, employment conditions and record-keeping. Administered by each state, so requirements, fees and renewal cycles vary between Maharashtra, Karnataka, Delhi and elsewhere. Usually needed before opening.",
+      "seeAlso": ["trade-licence", "gst-registration", "fssai-licence"]
+    },
+    {
+      "term": "Site Approval",
+      "slug": "site-approval",
+      "category": "Operations",
+      "definition": "The franchisor's sign-off on your proposed location before you sign a lease. Brands assess catchment, visibility, frontage, footfall and proximity to other outlets. Never commit to a lease before approval: an unapproved site can leave you holding a rental liability for premises you cannot use for that brand.",
+      "seeAlso": ["catchment-area", "footfall", "fit-out"]
+    },
+    {
+      "term": "Soft Launch",
+      "slug": "soft-launch",
+      "category": "Operations",
+      "definition": "Opening quietly at limited capacity before the public launch, to test systems and train staff under real conditions. It trades a little early revenue for far fewer first impressions ruined by teething problems, which is valuable in food service where early reviews are hard to undo.",
+      "seeAlso": ["fit-out", "standard-operating-procedure"]
+    },
+    {
+      "term": "Standard Operating Procedure (SOP)",
+      "slug": "standard-operating-procedure",
+      "category": "Operations",
+      "definition": "The documented method for every routine task, from opening checks to portion sizes to complaint handling. SOPs are the actual product a franchisor sells: they are what makes outcomes repeatable across outlets and operators. Compliance is usually contractual, and audited.",
+      "seeAlso": ["franchise-agreement", "soft-launch", "conversion-franchise"]
+    },
+    {
+      "term": "Supply Chain",
+      "slug": "supply-chain",
+      "category": "Operations",
+      "definition": "How goods reach your outlet, and from whom. Franchise agreements often require specified items to be bought from approved suppliers, which protects consistency but constrains your costs. For international brands entering India, confirm whether key inputs are sourced locally or imported, since imports expose you to currency and customs risk.",
+      "seeAlso": ["cost-of-goods-sold", "franchisor"]
+    },
+    {
+      "term": "Term and Renewal",
+      "slug": "term-and-renewal",
+      "category": "Legal & Agreements",
+      "definition": "How long the agreement runs and on what basis it can be extended. Terms of five to ten years are common. Check whether renewal is a right or at the franchisor's discretion, what fee applies, and whether renewal requires refurbishment to current brand standards, which can be a substantial unplanned cost.",
+      "seeAlso": ["franchise-agreement", "termination-clause", "transfer-clause"]
+    },
+    {
+      "term": "Termination Clause",
+      "slug": "termination-clause",
+      "category": "Legal & Agreements",
+      "definition": "The circumstances under which either side can end the agreement early, and what follows. Look at what counts as breach, whether you get an opportunity to remedy it, and your obligations on exit, including de-branding, returning materials, and any continuing non-compete.",
+      "seeAlso": ["franchise-agreement", "non-compete-clause", "intellectual-property-licence"]
+    },
+    {
+      "term": "Territory Rights",
+      "slug": "territory-rights",
+      "category": "Legal & Agreements",
+      "definition": "The geographic area assigned to you, and what protection comes with it. Definitions differ: a radius, a postal code set, or a named locality. Clarify whether the territory is exclusive, whether online and delivery orders from within it are yours, and what happens if the area is later redrawn.",
+      "seeAlso": ["exclusivity-clause", "area-developer", "catchment-area"]
+    },
+    {
+      "term": "Trade Licence",
+      "slug": "trade-licence",
+      "category": "India Compliance",
+      "definition": "Permission from the local municipal body to operate a commercial activity at a specific address. Requirements, fees and renewal cycles are set locally, so they differ between municipal corporations. Normally required before opening and renewed periodically.",
+      "seeAlso": ["shop-and-establishment-registration", "fssai-licence", "gst-registration"]
+    },
+    {
+      "term": "Transfer Clause",
+      "slug": "transfer-clause",
+      "category": "Legal & Agreements",
+      "definition": "The terms on which you may sell your franchise to someone else. Franchisors generally retain approval rights over the buyer and often charge a transfer fee; some hold a right of first refusal. Since this governs your exit, it deserves as much attention as the entry terms.",
+      "seeAlso": ["franchise-agreement", "term-and-renewal", "termination-clause"]
+    },
+    {
+      "term": "Turnkey",
+      "slug": "turnkey",
+      "category": "Operations",
+      "definition": "An arrangement where the franchisor or an appointed contractor delivers the outlet complete and ready to trade. It reduces project-management burden and makes costs more predictable, usually at a higher headline price. Check precisely what the package includes, since equipment, licences and initial stock are often excluded.",
+      "seeAlso": ["fit-out", "capital-expenditure"]
+    },
+    {
+      "term": "Unit Economics",
+      "slug": "unit-economics",
+      "category": "Money & Economics",
+      "definition": "The revenue and cost structure of a single outlet: average transaction value, daily transactions, gross margin, rent, payroll, royalty, and what is left. If the unit economics do not work for one outlet, scale makes the problem larger rather than smaller. This is the single most important thing to model before signing.",
+      "seeAlso": ["break-even-point", "gross-margin", "payback-period"]
+    },
+    {
+      "term": "Unit Franchise",
+      "slug": "unit-franchise",
+      "category": "Franchise Models",
+      "definition": "The right to operate one outlet at one approved location, the most common and most accessible entry point into franchising. Lowest capital requirement of the models, and the usual starting point for first-time franchisees, who may later add units.",
+      "seeAlso": ["multi-unit-franchise", "area-developer", "master-franchise"]
+    },
+    {
+      "term": "Working Capital",
+      "slug": "working-capital",
+      "category": "Money & Economics",
+      "definition": "Cash to fund day-to-day operations such as stock, salaries, rent and utilities, until the outlet sustains itself. Routinely underestimated. Plan for several months of full operating costs beyond your setup budget; running out of working capital shortly after opening is a common and avoidable failure.",
+      "seeAlso": ["break-even-point", "capital-expenditure", "unit-economics"]
+    }
+  ]
+}
